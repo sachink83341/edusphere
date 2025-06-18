@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About EduSphere - Your Learning Universe</title>
+    <meta name="description" content="Learn about EduSphere, a comprehensive educational platform designed to help students excel in their studies with quality notes and interactive learning materials.">
+    <meta name="keywords" content="about edusphere, educational platform, learning, students, gorav soni">
+    <meta name="author" content="Gorav Soni">
+    
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Go Back Button -->
+    <div class="bg-gray-100 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <button onclick="goBack()" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Go Back</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3">
+                    <div>
+                        <h1 class="text-xl font-bold font-poppins text-blue-600">EduSphere</h1>
+                        <p class="text-xs text-gray-500">Your Learning Universe</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="subjects.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Subjects</a>
+                        <a href="grammar.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Grammar</a>
+                        <a href="about.html" class="nav-link active text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="subjects.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Subjects</a>
+                <a href="grammar.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Grammar</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold font-poppins mb-4">About EduSphere</h1>
+            <p class="text-xl text-purple-100 mb-8">Empowering students through quality education</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">Our Mission</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    To provide comprehensive, accessible, and high-quality educational resources that empower students 
+                    to achieve academic excellence and develop a lifelong love for learning.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold font-poppins text-gray-900 mb-3">Quality Education</h3>
+                    <p class="text-gray-600">
+                        We provide meticulously crafted educational content that meets high academic standards 
+                        and helps students understand complex concepts with ease.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold font-poppins text-gray-900 mb-3">Student-Centered</h3>
+                    <p class="text-gray-600">
+                        Our platform is designed with students in mind, offering intuitive navigation, 
+                        interactive content, and resources tailored to different learning styles.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold font-poppins text-gray-900 mb-3">Innovation</h3>
+                    <p class="text-gray-600">
+                        We leverage modern web technologies and 3D visualizations to create engaging 
+                        learning experiences that make education more interactive and memorable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">What We Offer</h2>
+                <p class="text-lg text-gray-600">
+                    Comprehensive educational resources designed for student success
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-500 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <i class="fas fa-book text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Comprehensive Subject Notes</h3>
+                            <p class="text-gray-600">
+                                Detailed notes covering Mathematics, Science, Physics, History, Computer Science, 
+                                English, Urdu, and Islamiat with clear explanations and practical examples.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-green-500 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <i class="fas fa-language text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">English Grammar Mastery</h3>
+                            <p class="text-gray-600">
+                                Complete grammar guide covering tenses, modals, passive voice, direct and 
+                                indirect speech, articles, and all essential grammar topics with examples.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-purple-500 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <i class="fas fa-cube text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Interactive 3D Visualizations</h3>
+                            <p class="text-gray-600">
+                                Engaging 3D animations and visual aids that help students better understand 
+                                complex concepts, especially in science and mathematics.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-orange-500 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1">
+                            <i class="fas fa-download text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Downloadable Resources</h3>
+                            <p class="text-gray-600">
+                                All notes and study materials are available for download, allowing students 
+                                to access content offline and study at their own pace.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold font-poppins text-gray-900 mb-6">Why Choose EduSphere?</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Expertly crafted educational content</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Mobile-responsive design for all devices</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Free access to all educational resources</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Regular updates and new content</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Interactive learning experience</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Search functionality for quick access</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">Built with Modern Technology</h2>
+                <p class="text-lg text-gray-600">
+                    EduSphere is built using cutting-edge web technologies to ensure optimal performance and accessibility
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-html5 text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">HTML5</h3>
+                    <p class="text-gray-600 text-sm">Modern semantic markup for better accessibility and SEO</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-css3-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Tailwind CSS</h3>
+                    <p class="text-gray-600 text-sm">Utility-first CSS framework for responsive and beautiful design</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-js-square text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">JavaScript</h3>
+                    <p class="text-gray-600 text-sm">Interactive features and dynamic content manipulation</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cube text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Three.js</h3>
+                    <p class="text-gray-600 text-sm">3D graphics library for immersive educational visualizations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-user-graduate text-white text-3xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold font-poppins mb-4">Meet the Developer</h2>
+                    <h3 class="text-2xl font-semibold text-blue-100 mb-4">Gorav Soni</h3>
+                    <p class="text-lg text-blue-100 mb-6 leading-relaxed">
+                        EduSphere was created with a passion for education and technology. As a developer committed to 
+                        making quality education accessible to all students, I designed this platform to bridge the gap 
+                        between traditional learning and modern digital experiences. My goal is to help students achieve 
+                        their academic potential through well-structured, comprehensive educational resources.
+                    </p>
+                    <div class="flex justify-center space-x-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">8+</div>
+                            <div class="text-blue-100 text-sm">Subjects Covered</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">100+</div>
+                            <div class="text-blue-100 text-sm">Topics Explained</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">24/7</div>
+                            <div class="text-blue-100 text-sm">Available Access</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">Our Vision</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Looking towards the future of education
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold font-poppins text-gray-900 mb-6">Transforming Education Through Technology</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        We envision a world where every student has access to high-quality educational resources 
+                        regardless of their geographical location or economic background. Through innovative use of 
+                        technology and thoughtful content design, we aim to make learning more engaging, effective, 
+                        and enjoyable.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our commitment extends beyond just providing notes and materials. We strive to create an 
+                        ecosystem that promotes critical thinking, creativity, and a deep understanding of subjects 
+                        that will serve students throughout their academic journey and beyond.
+                    </p>
+                    <div class="flex items-center text-blue-600">
+                        <i class="fas fa-quote-left text-2xl mr-3"></i>
+                        <span class="text-lg font-medium italic">
+                            "Education is the most powerful weapon which you can use to change the world."
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-3">Future Plans</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                Interactive quizzes and assessments
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                Video tutorials and explanations
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                Mobile application development
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                Multilingual content support
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-arrow-right text-blue-500 mr-2"></i>
+                                Community features and forums
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-500 text-white p-6 rounded-xl">
+                        <h4 class="text-xl font-semibold mb-3">Join Our Journey</h4>
+                        <p class="text-blue-100 mb-4">
+                            Be part of the educational revolution. Share your feedback, suggestions, 
+                            and help us improve the learning experience for students worldwide.
+                        </p>
+                        <a href="contact.html" class="inline-flex items-center bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3 filter invert">
+                        <div>
+                            <h3 class="text-xl font-bold font-poppins">EduSphere</h3>
+                            <p class="text-gray-400 text-sm">Your Learning Universe</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        EduSphere is dedicated to providing high-quality educational resources for students.
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Made by <span class="text-blue-400 font-semibold">Gorav Soni</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="subjects.html" class="text-gray-400 hover:text-white transition-colors">Subjects</a></li>
+                        <li><a href="grammar.html" class="text-gray-400 hover:text-white transition-colors">Grammar</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Subjects</h4>
+                    <ul class="space-y-2">
+                        <li><a href="subjects.html#math" class="text-gray-400 hover:text-white transition-colors">Mathematics</a></li>
+                        <li><a href="subjects.html#science" class="text-gray-400 hover:text-white transition-colors">Science</a></li>
+                        <li><a href="subjects.html#physics" class="text-gray-400 hover:text-white transition-colors">Physics</a></li>
+                        <li><a href="subjects.html#history" class="text-gray-400 hover:text-white transition-colors">History</a></li>
+                        <li><a href="subjects.html#computer" class="text-gray-400 hover:text-white transition-colors">Computer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 EduSphere. All rights reserved. Made by Gorav Soni.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

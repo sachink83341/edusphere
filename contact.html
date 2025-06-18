@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EduSphere</title>
+    <meta name="description" content="Get in touch with EduSphere. Send us your feedback, questions, or suggestions to help us improve our educational platform.">
+    <meta name="keywords" content="contact edusphere, feedback, educational support, student help">
+    <meta name="author" content="Gorav Soni">
+    
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Go Back Button -->
+    <div class="bg-gray-100 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <button onclick="goBack()" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Go Back</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3">
+                    <div>
+                        <h1 class="text-xl font-bold font-poppins text-blue-600">EduSphere</h1>
+                        <p class="text-xs text-gray-500">Your Learning Universe</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="subjects.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Subjects</a>
+                        <a href="grammar.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Grammar</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="contact.html" class="nav-link active text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="subjects.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Subjects</a>
+                <a href="grammar.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Grammar</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold font-poppins mb-4">Contact Us</h1>
+            <p class="text-xl text-indigo-100 mb-8">We'd love to hear from you</p>
+            <p class="text-lg text-indigo-200 max-w-2xl mx-auto">
+                Have questions, suggestions, or feedback? Get in touch with us and help us improve 
+                the EduSphere learning experience.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6">Send us a Message</h2>
+                    <form class="space-y-6" id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+                                    First Name <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="firstName" name="firstName" required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                       placeholder="Enter your first name">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Last Name <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="lastName" name="lastName" required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                       placeholder="Enter your last name">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                Email Address <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                   placeholder="Enter your email address">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+                                Subject <span class="text-red-500">*</span>
+                            </label>
+                            <select id="subject" name="subject" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="bug-report">Bug Report</option>
+                                <option value="content-suggestion">Content Suggestion</option>
+                                <option value="technical-support">Technical Support</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="grade" class="block text-sm font-medium text-gray-700 mb-2">
+                                Your Grade/Level (Optional)
+                            </label>
+                            <select id="grade" name="grade"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select your grade</option>
+                                <option value="grade-6">Grade 6</option>
+                                <option value="grade-7">Grade 7</option>
+                                <option value="grade-8">Grade 8</option>
+                                <option value="grade-9">Grade 9</option>
+                                <option value="grade-10">Grade 10</option>
+                                <option value="grade-11">Grade 11</option>
+                                <option value="grade-12">Grade 12</option>
+                                <option value="college">College/University</option>
+                                <option value="teacher">Teacher</option>
+                                <option value="parent">Parent</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                                Message <span class="text-red-500">*</span>
+                            </label>
+                            <textarea id="message" name="message" rows="6" required
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical"
+                                      placeholder="Tell us about your inquiry, feedback, or suggestion..."></textarea>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input type="checkbox" id="privacy" name="privacy" required
+                                   class="mt-1 mr-3 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="privacy" class="text-sm text-gray-600">
+                                I agree that my submitted data is being collected and stored. 
+                                <span class="text-red-500">*</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit"
+                                class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="success-message" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        Thank you for your message! We appreciate your feedback and will get back to you soon.
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6">Get in Touch</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Email Us</h3>
+                                    <p class="text-gray-600">info@edusphere.edu</p>
+                                    <p class="text-gray-600">support@edusphere.edu</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-clock text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Response Time</h3>
+                                    <p class="text-gray-600">We typically respond within 24-48 hours</p>
+                                    <p class="text-gray-600 text-sm">Monday to Friday: 9 AM - 6 PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-globe text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-gray-900">Online Platform</h3>
+                                    <p class="text-gray-600">Available 24/7 for all students</p>
+                                    <p class="text-gray-600 text-sm">Access from anywhere, anytime</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Section -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6">Frequently Asked Questions</h2>
+                        <div class="space-y-4">
+                            <div class="border-b border-gray-200 pb-4">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">How can I download notes?</h3>
+                                <p class="text-gray-600 text-sm">
+                                    Navigate to any subject page and click the "Download Notes" button. 
+                                    All our educational materials are freely available for download.
+                                </p>
+                            </div>
+                            
+                            <div class="border-b border-gray-200 pb-4">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Is EduSphere free to use?</h3>
+                                <p class="text-gray-600 text-sm">
+                                    Yes! EduSphere is completely free for all students. Our mission is to provide 
+                                    quality education accessible to everyone.
+                                </p>
+                            </div>
+                            
+                            <div class="border-b border-gray-200 pb-4">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">How often is content updated?</h3>
+                                <p class="text-gray-600 text-sm">
+                                    We regularly review and update our content to ensure accuracy and relevance. 
+                                    New topics and improvements are added frequently.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I suggest new content?</h3>
+                                <p class="text-gray-600 text-sm">
+                                    Absolutely! We welcome content suggestions. Please use the contact form above 
+                                    and select "Content Suggestion" as the subject.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature Highlights -->
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl p-8">
+                        <h2 class="text-2xl font-bold font-poppins mb-4">Why Students Love EduSphere</h2>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-green-300"></i>
+                                <span>Comprehensive study materials</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-green-300"></i>
+                                <span>Interactive 3D visualizations</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-green-300"></i>
+                                <span>Mobile-friendly design</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-green-300"></i>
+                                <span>Free downloadable resources</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-green-300"></i>
+                                <span>Regular content updates</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <div class="text-center">
+                                <p class="text-lg font-semibold mb-2">Join thousands of students</p>
+                                <p class="text-blue-100">who are excelling with EduSphere</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3 filter invert">
+                        <div>
+                            <h3 class="text-xl font-bold font-poppins">EduSphere</h3>
+                            <p class="text-gray-400 text-sm">Your Learning Universe</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        EduSphere is dedicated to providing high-quality educational resources for students.
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Made by <span class="text-blue-400 font-semibold">Gorav Soni</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="subjects.html" class="text-gray-400 hover:text-white transition-colors">Subjects</a></li>
+                        <li><a href="grammar.html" class="text-gray-400 hover:text-white transition-colors">Grammar</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Subjects</h4>
+                    <ul class="space-y-2">
+                        <li><a href="subjects.html#math" class="text-gray-400 hover:text-white transition-colors">Mathematics</a></li>
+                        <li><a href="subjects.html#science" class="text-gray-400 hover:text-white transition-colors">Science</a></li>
+                        <li><a href="subjects.html#physics" class="text-gray-400 hover:text-white transition-colors">Physics</a></li>
+                        <li><a href="subjects.html#history" class="text-gray-400 hover:text-white transition-colors">History</a></li>
+                        <li><a href="subjects.html#computer" class="text-gray-400 hover:text-white transition-colors">Computer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 EduSphere. All rights reserved. Made by Gorav Soni.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            document.getElementById('success-message').classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to success message
+            document.getElementById('success-message').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+        });
+    </script>
+</body>
+</html>

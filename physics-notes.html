@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Notes - EduSphere</title>
+    <meta name="description" content="Comprehensive Physics notes covering Mechanics, Electricity, Magnetism, Waves, and Modern Physics for students.">
+    <meta name="author" content="Gorav Soni">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { font-size: 12pt; line-height: 1.4; }
+            h1 { font-size: 18pt; }
+            h2 { font-size: 16pt; }
+            h3 { font-size: 14pt; }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Header -->
+    <header class="bg-purple-600 text-white py-6 no-print">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold font-poppins">Physics Notes</h1>
+                    <p class="text-purple-100">Understanding the fundamental laws of nature</p>
+                </div>
+                <button onclick="window.print()" class="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
+                    <i class="fas fa-print mr-2"></i>Print Notes
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Table of Contents -->
+        <section class="bg-white rounded-xl shadow-lg p-6 mb-8 no-print">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-4">Table of Contents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ul class="space-y-2">
+                    <li><a href="#mechanics" class="text-blue-600 hover:text-blue-800">1. Mechanics</a></li>
+                    <li><a href="#thermodynamics" class="text-blue-600 hover:text-blue-800">2. Thermodynamics</a></li>
+                    <li><a href="#waves" class="text-blue-600 hover:text-blue-800">3. Waves and Sound</a></li>
+                    <li><a href="#electricity" class="text-blue-600 hover:text-blue-800">4. Electricity</a></li>
+                </ul>
+                <ul class="space-y-2">
+                    <li><a href="#magnetism" class="text-blue-600 hover:text-blue-800">5. Magnetism</a></li>
+                    <li><a href="#optics" class="text-blue-600 hover:text-blue-800">6. Optics</a></li>
+                    <li><a href="#modern-physics" class="text-blue-600 hover:text-blue-800">7. Modern Physics</a></li>
+                    <li><a href="#formulas" class="text-blue-600 hover:text-blue-800">8. Important Formulas</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Chapter 1: Mechanics -->
+        <section id="mechanics" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-purple-500 pb-2">1. Mechanics</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.1 Motion and Kinematics</h3>
+                    <p class="text-gray-700 mb-3">Kinematics describes the motion of objects without considering the forces that cause the motion.</p>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-purple-900 mb-2">Key Equations of Motion:</h4>
+                        <ul class="text-purple-800 space-y-1">
+                            <li>• v = u + at</li>
+                            <li>• s = ut + ½at²</li>
+                            <li>• v² = u² + 2as</li>
+                        </ul>
+                        <p class="text-purple-700 text-sm mt-2">Where: v = final velocity, u = initial velocity, a = acceleration, t = time, s = displacement</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">Example Problem:</h4>
+                        <p class="text-gray-700">A car accelerates from rest at 2 m/s² for 10 seconds. Find the final velocity and distance traveled.</p>
+                        <p class="text-gray-700 mt-2"><strong>Solution:</strong></p>
+                        <p class="text-gray-700">Given: u = 0 m/s, a = 2 m/s², t = 10 s</p>
+                        <p class="text-gray-700">Final velocity: v = u + at = 0 + 2(10) = 20 m/s</p>
+                        <p class="text-gray-700">Distance: s = ut + ½at² = 0(10) + ½(2)(10)² = 100 m</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.2 Newton's Laws of Motion</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-900 mb-2">First Law</h4>
+                            <p class="text-red-800 text-sm">An object at rest stays at rest, and an object in motion stays in motion unless acted upon by an unbalanced force.</p>
+                            <p class="text-red-700 text-xs mt-2">Also known as the Law of Inertia</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">Second Law</h4>
+                            <p class="text-blue-800 text-sm">The acceleration of an object is directly proportional to the net force and inversely proportional to its mass.</p>
+                            <p class="text-blue-700 text-xs mt-2 font-mono">F = ma</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">Third Law</h4>
+                            <p class="text-green-800 text-sm">For every action, there is an equal and opposite reaction.</p>
+                            <p class="text-green-700 text-xs mt-2">Forces always occur in pairs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.3 Energy and Work</h3>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-yellow-900 mb-2">Types of Energy:</h4>
+                        <ul class="text-yellow-800 space-y-1">
+                            <li>• <strong>Kinetic Energy:</strong> KE = ½mv²</li>
+                            <li>• <strong>Potential Energy:</strong> PE = mgh</li>
+                            <li>• <strong>Work Done:</strong> W = F × d × cos θ</li>
+                            <li>• <strong>Power:</strong> P = W/t = F × v</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-900 mb-2">Conservation of Energy:</h4>
+                        <p class="text-green-800">Energy cannot be created or destroyed, only transferred from one form to another.</p>
+                        <p class="text-green-700 mt-2">Total Energy = KE + PE = constant</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2: Thermodynamics -->
+        <section id="thermodynamics" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-red-500 pb-2">2. Thermodynamics</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.1 Temperature and Heat</h3>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-red-900 mb-2">Temperature Scales:</h4>
+                        <ul class="text-red-800 space-y-1">
+                            <li>• <strong>Celsius to Kelvin:</strong> K = °C + 273.15</li>
+                            <li>• <strong>Celsius to Fahrenheit:</strong> °F = (9/5)°C + 32</li>
+                            <li>• <strong>Absolute Zero:</strong> 0 K = -273.15°C</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">Heat Transfer:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm">
+                            <div>
+                                <p class="text-blue-800"><strong>Conduction</strong></p>
+                                <p class="text-blue-700">Through direct contact</p>
+                            </div>
+                            <div>
+                                <p class="text-blue-800"><strong>Convection</strong></p>
+                                <p class="text-blue-700">Through fluid movement</p>
+                            </div>
+                            <div>
+                                <p class="text-blue-800"><strong>Radiation</strong></p>
+                                <p class="text-blue-700">Through electromagnetic waves</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.2 Laws of Thermodynamics</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-900 mb-2">First Law (Conservation of Energy):</h4>
+                            <p class="text-purple-800">ΔU = Q - W</p>
+                            <p class="text-purple-700 text-sm">Change in internal energy = Heat added - Work done by system</p>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-900 mb-2">Second Law (Entropy):</h4>
+                            <p class="text-orange-800">Heat flows naturally from hot to cold objects</p>
+                            <p class="text-orange-700 text-sm">Entropy of an isolated system always increases</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: Waves and Sound -->
+        <section id="waves" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-blue-500 pb-2">3. Waves and Sound</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.1 Wave Properties</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-900 mb-2">Wave Equation:</h4>
+                        <p class="text-blue-800 text-center text-lg">v = fλ</p>
+                        <p class="text-blue-700 text-sm text-center">velocity = frequency × wavelength</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">Wave Types:</h4>
+                            <ul class="text-green-800 text-sm space-y-1">
+                                <li>• <strong>Transverse:</strong> Perpendicular vibration</li>
+                                <li>• <strong>Longitudinal:</strong> Parallel vibration</li>
+                                <li>• <strong>Mechanical:</strong> Requires medium</li>
+                                <li>• <strong>Electromagnetic:</strong> No medium needed</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-yellow-900 mb-2">Wave Properties:</h4>
+                            <ul class="text-yellow-800 text-sm space-y-1">
+                                <li>• <strong>Amplitude:</strong> Maximum displacement</li>
+                                <li>• <strong>Frequency:</strong> Waves per second (Hz)</li>
+                                <li>• <strong>Period:</strong> Time for one complete wave</li>
+                                <li>• <strong>Wavelength:</strong> Distance between peaks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.2 Sound Waves</h3>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-purple-900 mb-2">Sound Properties:</h4>
+                        <ul class="text-purple-800 space-y-1">
+                            <li>• Speed in air: 343 m/s (at 20°C)</li>
+                            <li>• Frequency range (human hearing): 20 Hz - 20,000 Hz</li>
+                            <li>• Sound intensity measured in decibels (dB)</li>
+                            <li>• Doppler effect: frequency change due to relative motion</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-red-900 mb-2">Doppler Effect Formula:</h4>
+                        <p class="text-red-800">f' = f × (v ± v_observer) / (v ± v_source)</p>
+                        <p class="text-red-700 text-sm">Use + when approaching, - when receding</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 4: Electricity -->
+        <section id="electricity" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-yellow-500 pb-2">4. Electricity</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">4.1 Electric Charge and Current</h3>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-yellow-900 mb-2">Fundamental Laws:</h4>
+                        <ul class="text-yellow-800 space-y-1">
+                            <li>• <strong>Coulomb's Law:</strong> F = kq₁q₂/r²</li>
+                            <li>• <strong>Current:</strong> I = Q/t (charge per unit time)</li>
+                            <li>• <strong>Ohm's Law:</strong> V = IR</li>
+                            <li>• <strong>Power:</strong> P = VI = I²R = V²/R</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">Circuit Components:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p class="text-blue-800"><strong>Resistors:</strong></p>
+                                <ul class="text-blue-700">
+                                    <li>• Series: R_total = R₁ + R₂ + R₃</li>
+                                    <li>• Parallel: 1/R_total = 1/R₁ + 1/R₂ + 1/R₃</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="text-blue-800"><strong>Capacitors:</strong></p>
+                                <ul class="text-blue-700">
+                                    <li>• Series: 1/C_total = 1/C₁ + 1/C₂ + 1/C₃</li>
+                                    <li>• Parallel: C_total = C₁ + C₂ + C₃</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">4.2 Electric Fields and Potential</h3>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-900 mb-2">Key Concepts:</h4>
+                        <ul class="text-green-800 space-y-1">
+                            <li>• <strong>Electric Field:</strong> E = F/q = kQ/r²</li>
+                            <li>• <strong>Electric Potential:</strong> V = kQ/r</li>
+                            <li>• <strong>Work Done:</strong> W = qV</li>
+                            <li>• <strong>Capacitance:</strong> C = Q/V</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 5: Magnetism -->
+        <section id="magnetism" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-green-500 pb-2">5. Magnetism</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">5.1 Magnetic Fields</h3>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-green-900 mb-2">Magnetic Force:</h4>
+                        <ul class="text-green-800 space-y-1">
+                            <li>• <strong>On moving charge:</strong> F = qvB sin θ</li>
+                            <li>• <strong>On current-carrying wire:</strong> F = BIL sin θ</li>
+                            <li>• <strong>Between parallel wires:</strong> F = μ₀I₁I₂L/(2πd)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">Electromagnetic Induction:</h4>
+                        <ul class="text-blue-800 space-y-1">
+                            <li>• <strong>Faraday's Law:</strong> ε = -dΦ/dt</li>
+                            <li>• <strong>Lenz's Law:</strong> Induced current opposes change</li>
+                            <li>• <strong>Motional EMF:</strong> ε = BLv</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 6: Optics -->
+        <section id="optics" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-indigo-500 pb-2">6. Optics</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">6.1 Reflection and Refraction</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-indigo-900 mb-2">Laws of Reflection:</h4>
+                            <ul class="text-indigo-800 text-sm space-y-1">
+                                <li>• Angle of incidence = Angle of reflection</li>
+                                <li>• Incident ray, reflected ray, and normal lie in same plane</li>
+                                <li>• Mirror equation: 1/f = 1/u + 1/v</li>
+                                <li>• Magnification: m = v/u = h'/h</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-900 mb-2">Laws of Refraction:</h4>
+                            <ul class="text-purple-800 text-sm space-y-1">
+                                <li>• Snell's Law: n₁ sin θ₁ = n₂ sin θ₂</li>
+                                <li>• Refractive index: n = c/v</li>
+                                <li>• Critical angle: sin θc = n₂/n₁</li>
+                                <li>• Total internal reflection occurs when θ > θc</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">6.2 Lenses and Optical Instruments</h3>
+                    
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-orange-900 mb-2">Lens Equations:</h4>
+                        <ul class="text-orange-800 space-y-1">
+                            <li>• <strong>Lens equation:</strong> 1/f = 1/u + 1/v</li>
+                            <li>• <strong>Power of lens:</strong> P = 1/f (in meters)</li>
+                            <li>• <strong>Lens maker's equation:</strong> 1/f = (n-1)(1/R₁ - 1/R₂)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 7: Modern Physics -->
+        <section id="modern-physics" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-red-500 pb-2">7. Modern Physics</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">7.1 Atomic Structure</h3>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-red-900 mb-2">Key Discoveries:</h4>
+                        <ul class="text-red-800 space-y-1">
+                            <li>• <strong>Photoelectric Effect:</strong> E = hf - φ</li>
+                            <li>• <strong>De Broglie Wavelength:</strong> λ = h/p</li>
+                            <li>• <strong>Bohr Model:</strong> mvr = nℏ</li>
+                            <li>• <strong>Energy Levels:</strong> E = -13.6/n² eV (for hydrogen)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">Nuclear Physics:</h4>
+                        <ul class="text-blue-800 space-y-1">
+                            <li>• <strong>Mass-Energy:</strong> E = mc²</li>
+                            <li>• <strong>Radioactive Decay:</strong> N = N₀e^(-λt)</li>
+                            <li>• <strong>Half-life:</strong> t₁/₂ = ln(2)/λ</li>
+                            <li>• <strong>Binding Energy:</strong> BE = (Δm)c²</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Formulas Reference -->
+        <section id="formulas" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-indigo-500 pb-2">Important Physics Formulas</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Mechanics</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <ul class="text-gray-700 space-y-1 text-sm">
+                            <li>• F = ma (Newton's 2nd Law)</li>
+                            <li>• v = u + at</li>
+                            <li>• s = ut + ½at²</li>
+                            <li>• v² = u² + 2as</li>
+                            <li>• KE = ½mv²</li>
+                            <li>• PE = mgh</li>
+                            <li>• W = F·d·cos θ</li>
+                            <li>• P = W/t</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Electricity & Magnetism</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <ul class="text-gray-700 space-y-1 text-sm">
+                            <li>• V = IR (Ohm's Law)</li>
+                            <li>• P = VI = I²R = V²/R</li>
+                            <li>• F = qE (Electric force)</li>
+                            <li>• F = qvB sin θ (Magnetic force)</li>
+                            <li>• ε = -dΦ/dt (Faraday's Law)</li>
+                            <li>• E = kQ/r²</li>
+                            <li>• V = kQ/r</li>
+                            <li>• C = Q/V</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Waves & Optics</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <ul class="text-gray-700 space-y-1 text-sm">
+                            <li>• v = fλ (Wave equation)</li>
+                            <li>• n₁ sin θ₁ = n₂ sin θ₂ (Snell's Law)</li>
+                            <li>• 1/f = 1/u + 1/v (Lens equation)</li>
+                            <li>• m = v/u (Magnification)</li>
+                            <li>• f' = f(v ± v₀)/(v ± vs) (Doppler)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Modern Physics</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <ul class="text-gray-700 space-y-1 text-sm">
+                            <li>• E = mc² (Mass-energy equivalence)</li>
+                            <li>• E = hf (Photon energy)</li>
+                            <li>• λ = h/p (De Broglie wavelength)</li>
+                            <li>• E = hf - φ (Photoelectric effect)</li>
+                            <li>• N = N₀e^(-λt) (Radioactive decay)</li>
+                            <li>• t₁/₂ = ln(2)/λ (Half-life)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 no-print">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>© 2025 EduSphere - Physics Notes. Made by Gorav Soni.</p>
+            <p class="text-gray-400 text-sm mt-2">For educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for table of contents
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

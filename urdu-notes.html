@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urdu Notes - EduSphere</title>
+    <meta name="description" content="Comprehensive Urdu notes covering Literature, Poetry, Prose, and Grammar in both Urdu and English for students.">
+    <meta name="author" content="Gorav Soni">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'urdu': ['Noto Nastaliq Urdu', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { font-size: 12pt; line-height: 1.4; }
+            h1 { font-size: 18pt; }
+            h2 { font-size: 16pt; }
+            h3 { font-size: 14pt; }
+        }
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2;
+        }
+        .urdu-poetry {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            direction: rtl;
+            text-align: center;
+            line-height: 2.5;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Header -->
+    <header class="bg-teal-600 text-white py-6 no-print">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold font-poppins">Urdu Notes</h1>
+                    <p class="text-teal-100">اردو ادب، شاعری اور زبان کی مہارت</p>
+                    <p class="text-teal-200 text-sm">Literature, Poetry, and Language Mastery</p>
+                </div>
+                <button onclick="window.print()" class="bg-white text-teal-600 px-4 py-2 rounded-lg font-semibold hover:bg-teal-50 transition-colors">
+                    <i class="fas fa-print mr-2"></i>Print Notes
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Table of Contents -->
+        <section class="bg-white rounded-xl shadow-lg p-6 mb-8 no-print">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-4">Table of Contents - فہرست</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ul class="space-y-2">
+                    <li><a href="#literature" class="text-blue-600 hover:text-blue-800">1. اردو ادب - Urdu Literature</a></li>
+                    <li><a href="#poetry" class="text-blue-600 hover:text-blue-800">2. شاعری - Poetry</a></li>
+                    <li><a href="#prose" class="text-blue-600 hover:text-blue-800">3. نثر - Prose</a></li>
+                    <li><a href="#grammar" class="text-blue-600 hover:text-blue-800">4. قواعد - Grammar</a></li>
+                </ul>
+                <ul class="space-y-2">
+                    <li><a href="#famous-poets" class="text-blue-600 hover:text-blue-800">5. مشہور شعراء - Famous Poets</a></li>
+                    <li><a href="#literary-forms" class="text-blue-600 hover:text-blue-800">6. ادبی اصناف - Literary Forms</a></li>
+                    <li><a href="#modern-urdu" class="text-blue-600 hover:text-blue-800">7. جدید اردو - Modern Urdu</a></li>
+                    <li><a href="#writing-skills" class="text-blue-600 hover:text-blue-800">8. تحریری مہارت - Writing Skills</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Chapter 1: Urdu Literature -->
+        <section id="literature" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-teal-500 pb-2">1. اردو ادب - Urdu Literature</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.1 اردو ادب کا تعارف - Introduction to Urdu Literature</h3>
+                    
+                    <div class="bg-teal-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-teal-900 mb-2">اردو زبان کی تاریخ - History of Urdu Language:</h4>
+                        <div class="text-teal-800 space-y-2">
+                            <p class="urdu-text">اردو زبان کا آغاز 11ویں صدی میں شمالی ہندوستان میں ہوا۔ یہ عربی، فارسی، ترکی اور ہندی زبانوں کا خوبصورت امتزاج ہے۔</p>
+                            <p class="text-sm">Urdu language originated in 11th century North India. It is a beautiful blend of Arabic, Persian, Turkish, and Hindi languages.</p>
+                        </div>
+                        <ul class="text-teal-700 mt-3 space-y-1">
+                            <li>• 11th-15th century: Early development period</li>
+                            <li>• 16th-18th century: Classical period</li>
+                            <li>• 19th-20th century: Modern period</li>
+                            <li>• Contemporary: Current literary trends</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">ادب کی اقسام - Types of Literature:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <ul class="text-blue-800 space-y-1">
+                                    <li>• <strong>شاعری (Poetry):</strong> منظوم کلام</li>
+                                    <li>• <strong>نثر (Prose):</strong> غیر منظوم تحریر</li>
+                                    <li>• <strong>ڈرامہ (Drama):</strong> اسٹیج کے لیے لکھا گیا</li>
+                                    <li>• <strong>ناول (Novel):</strong> طویل افسانوی کہانی</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="text-blue-800 space-y-1">
+                                    <li>• <strong>افسانہ (Short Story):</strong> مختصر کہانی</li>
+                                    <li>• <strong>مضامین (Essays):</strong> موضوعاتی تحریریں</li>
+                                    <li>• <strong>سوانح (Biography):</strong> حالات زندگی</li>
+                                    <li>• <strong>تنقید (Criticism):</strong> ادبی جائزہ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.2 ادبی دور - Literary Periods</h3>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-900 mb-2">اہم ادبی ادوار - Important Literary Periods:</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-yellow-800 font-medium">دکنی دور (Deccani Period) - 14th-17th Century:</p>
+                                <p class="text-yellow-700 text-sm urdu-text">جنوبی ہند میں اردو ادب کا ابتدائی دور۔ ولی دکنی اس دور کے اہم شاعر۔</p>
+                            </div>
+                            <div>
+                                <p class="text-yellow-800 font-medium">شمالی ہند کا دور (North Indian Period) - 18th-19th Century:</p>
+                                <p class="text-yellow-700 text-sm urdu-text">میر تقی میر، سودا، انشاء اللہ خان انشاء کا دور۔</p>
+                            </div>
+                            <div>
+                                <p class="text-yellow-800 font-medium">جدید دور (Modern Period) - 19th Century onwards:</p>
+                                <p class="text-yellow-700 text-sm urdu-text">سر سید احمد خان، حالی، شبلی، اقبال کا دور۔</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2: Poetry -->
+        <section id="poetry" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-blue-500 pb-2">2. شاعری - Poetry</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.1 شاعری کی اصناف - Forms of Poetry</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-900 mb-2">غزل - Ghazal:</h4>
+                        <div class="space-y-3">
+                            <p class="text-blue-800 urdu-text">غزل اردو شاعری کی سب سے مقبول صنف ہے۔ اس میں عام طور پر 5 سے 15 اشعار ہوتے ہیں۔</p>
+                            <p class="text-blue-700 text-sm">Ghazal is the most popular form of Urdu poetry, typically containing 5-15 couplets.</p>
+                            
+                            <div class="bg-white p-3 rounded border-l-4 border-blue-500">
+                                <h5 class="font-medium text-blue-900 mb-2">مثال - Example (Mirza Ghalib):</h5>
+                                <div class="urdu-poetry text-blue-800">
+                                    <p>دل ہی تو ہے نہ سنگ و شاہد</p>
+                                    <p>درد سے بھر نہ آئے کیوں</p>
+                                    <p>رویئے گے ہم ہزار بار</p>
+                                    <p>کوئی ہمیں ستائے کیوں</p>
+                                </div>
+                                <p class="text-blue-600 text-sm mt-2">Translation: "It's just a heart, not stone or witness / Why shouldn't it fill with pain?"</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-green-900 mb-2">نظم - Nazm:</h4>
+                        <div class="space-y-3">
+                            <p class="text-green-800 urdu-text">نظم میں تمام اشعار ایک ہی موضوع کے گرد گھومتے ہیں۔</p>
+                            <p class="text-green-700 text-sm">In Nazm, all verses revolve around a single theme.</p>
+                            
+                            <div class="bg-white p-3 rounded border-l-4 border-green-500">
+                                <h5 class="font-medium text-green-900 mb-2">مثال - Example (Allama Iqbal):</h5>
+                                <div class="urdu-poetry text-green-800">
+                                    <p>خودی کو کر بلند اتنا کہ ہر تقدیر سے پہلے</p>
+                                    <p>خدا بندے سے خود پوچھے بتا تیری رضا کیا ہے</p>
+                                </div>
+                                <p class="text-green-600 text-sm mt-2">Translation: "Elevate yourself so high that before every destiny, God asks you what your will is."</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-purple-900 mb-2">رباعی - Rubaai:</h4>
+                        <div class="space-y-3">
+                            <p class="text-purple-800 urdu-text">چار مصرعوں کا ایک شعری ٹکڑا جو مکمل خیال کا اظہار کرتا ہے۔</p>
+                            <p class="text-purple-700 text-sm">A four-line poem expressing a complete thought.</p>
+                            
+                            <div class="bg-white p-3 rounded border-l-4 border-purple-500">
+                                <div class="urdu-poetry text-purple-800">
+                                    <p>سرخ رُو ہونا ہے تو محنت کر اے نادان</p>
+                                    <p>بزم میں شرمندہ نہ ہو، پہچان اپنی پہچان</p>
+                                    <p>کام کرنا ہے اگر تو اُٹھ اور کام کر</p>
+                                    <p>بیٹھنے سے کوئی پڑھتا نہیں تیرا نشان</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.2 بحر اور وزن - Meter and Rhythm</h3>
+                    
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-orange-900 mb-2">اردو شاعری کی بحریں - Urdu Poetry Meters:</h4>
+                        <ul class="text-orange-800 space-y-1">
+                            <li>• <strong>بحر رمل:</strong> فاعلاتن فاعلاتن فاعلن</li>
+                            <li>• <strong>بحر ہزج:</strong> مفاعیلن مفاعیلن مفاعیلن</li>
+                            <li>• <strong>بحر رجز:</strong> مستفعلن مستفعلن مستفعلن</li>
+                            <li>• <strong>بحر کامل:</strong> متفاعلن متفاعلن متفاعلن</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: Prose -->
+        <section id="prose" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-green-500 pb-2">3. نثر - Prose</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.1 نثری اصناف - Prose Forms</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">افسانہ - Short Story:</h4>
+                            <div class="text-green-800 space-y-2">
+                                <p class="urdu-text">مختصر کہانی جو زندگی کے کسی ایک پہلو کو اجاگر کرتی ہے۔</p>
+                                <p class="text-sm">A brief narrative focusing on a single aspect of life.</p>
+                                <ul class="text-green-700 text-sm space-y-1 mt-2">
+                                    <li>• Famous writers: Saadat Hasan Manto, Ismat Chughtai</li>
+                                    <li>• Characteristics: Unity of effect, single plot</li>
+                                    <li>• Themes: Social issues, human psychology</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">ناول - Novel:</h4>
+                            <div class="text-blue-800 space-y-2">
+                                <p class="urdu-text">طویل کہانی جو کردار اور واقعات کی تفصیلی تصویر کشی کرتی ہے۔</p>
+                                <p class="text-sm">Extended narrative with detailed character and plot development.</p>
+                                <ul class="text-blue-700 text-sm space-y-1 mt-2">
+                                    <li>• Famous novels: Umrao Jan Ada, Khuda Ki Basti</li>
+                                    <li>• Elements: Complex plot, multiple characters</li>
+                                    <li>• Themes: Social reform, historical events</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-900 mb-2">مضمون - Essay:</h4>
+                            <div class="text-purple-800 space-y-2">
+                                <p class="urdu-text">کسی موضوع پر منطقی اور منظم تحریر۔</p>
+                                <p class="text-sm">Logical and organized writing on a specific topic.</p>
+                                <ul class="text-purple-700 text-sm space-y-1 mt-2">
+                                    <li>• Types: Personal, critical, descriptive</li>
+                                    <li>• Famous essayists: Sir Syed, Hali, Shibli</li>
+                                    <li>• Purpose: Education, reform, entertainment</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-900 mb-2">ڈرامہ - Drama:</h4>
+                            <div class="text-red-800 space-y-2">
+                                <p class="urdu-text">اسٹیج پر پیش کرنے کے لیے لکھا گیا ادب۔</p>
+                                <p class="text-sm">Literature written for stage performance.</p>
+                                <ul class="text-red-700 text-sm space-y-1 mt-2">
+                                    <li>• Elements: Dialogue, stage directions, acts</li>
+                                    <li>• Famous dramatists: Imtiaz Ali Taj, Khwaja Moinuddin</li>
+                                    <li>• Types: Tragedy, comedy, historical</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.2 نثر کی خصوصیات - Characteristics of Prose</h3>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-900 mb-2">اچھی نثر کی خصوصیات - Qualities of Good Prose:</h4>
+                        <ul class="text-yellow-800 space-y-1">
+                            <li>• <strong>صفائی (Clarity):</strong> واضح اور سادہ زبان</li>
+                            <li>• <strong>روانی (Fluency):</strong> بے تکلف اور آسان اسلوب</li>
+                            <li>• <strong>جامعیت (Brevity):</strong> مختصر اور جامع اظہار</li>
+                            <li>• <strong>دلکشی (Appeal):</strong> دلچسپ اور کشش</li>
+                            <li>• <strong>تاثیر (Effect):</strong> قاری پر گہرا اثر</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 4: Grammar -->
+        <section id="grammar" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-purple-500 pb-2">4. قواعد - Grammar</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">4.1 اجزائے کلام - Parts of Speech</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-900 mb-2">اسم - Noun:</h4>
+                            <div class="text-purple-800 space-y-2">
+                                <p class="urdu-text">کسی شخص، جگہ، چیز یا کیفیت کا نام۔</p>
+                                <p class="text-sm">Name of a person, place, thing, or quality.</p>
+                                <ul class="text-purple-700 text-sm space-y-1">
+                                    <li>• <strong>اسم ذات:</strong> کتاب، لڑکا، شہر</li>
+                                    <li>• <strong>اسم صفت:</strong> خوبصورتی، سچائی</li>
+                                    <li>• <strong>اسم جمع:</strong> کتابیں، لڑکے</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">فعل - Verb:</h4>
+                            <div class="text-blue-800 space-y-2">
+                                <p class="urdu-text">کام یا حالت کا اظہار کرنے والا لفظ۔</p>
+                                <p class="text-sm">Word expressing action or state.</p>
+                                <ul class="text-blue-700 text-sm space-y-1">
+                                    <li>• <strong>فعل لازم:</strong> سونا، آنا، جانا</li>
+                                    <li>• <strong>فعل متعدی:</strong> پڑھنا، لکھنا، کھانا</li>
+                                    <li>• <strong>فعل امدادی:</strong> ہے، تھا، گا</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">صفت - Adjective:</h4>
+                            <div class="text-green-800 space-y-2">
+                                <p class="urdu-text">اسم کی تعریف یا خصوصیت بتانے والا لفظ۔</p>
+                                <p class="text-sm">Word describing or qualifying a noun.</p>
+                                <ul class="text-green-700 text-sm space-y-1">
+                                    <li>• <strong>صفت ذاتی:</strong> کالا، سفید، لمبا</li>
+                                    <li>• <strong>صفت عددی:</strong> پہلا، دوسرا، کئی</li>
+                                    <li>• <strong>صفت اضافی:</strong> میرا، تیرا، اس کا</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-900 mb-2">ضمیر - Pronoun:</h4>
+                            <div class="text-orange-800 space-y-2">
+                                <p class="urdu-text">اسم کی جگہ استعمال ہونے والا لفظ۔</p>
+                                <p class="text-sm">Word used in place of a noun.</p>
+                                <ul class="text-orange-700 text-sm space-y-1">
+                                    <li>• <strong>ضمیر شخصی:</strong> میں، تو، وہ</li>
+                                    <li>• <strong>ضمیر اشارہ:</strong> یہ، وہ، یے</li>
+                                    <li>• <strong>ضمیر استفہام:</strong> کون، کیا</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">4.2 جملے کی اقسام - Types of Sentences</h3>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-900 mb-2">معنی کے اعتبار سے - According to Meaning:</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-yellow-800 font-medium urdu-text">خبریہ جملہ - Declarative Sentence:</p>
+                                <p class="text-yellow-700 text-sm">کوئی بات کہنے کے لیے - "احمد پڑھ رہا ہے۔"</p>
+                            </div>
+                            <div>
+                                <p class="text-yellow-800 font-medium urdu-text">استفہامیہ جملہ - Interrogative Sentence:</p>
+                                <p class="text-yellow-700 text-sm">سوال پوچھنے کے لیے - "تم کیا کر رہے ہو؟"</p>
+                            </div>
+                            <div>
+                                <p class="text-yellow-800 font-medium urdu-text">امریہ جملہ - Imperative Sentence:</p>
+                                <p class="text-yellow-700 text-sm">حکم دینے کے لیے - "یہاں آؤ۔"</p>
+                            </div>
+                            <div>
+                                <p class="text-yellow-800 font-medium urdu-text">ندائیہ جملہ - Exclamatory Sentence:</p>
+                                <p class="text-yellow-700 text-sm">جذبات کے اظہار کے لیے - "واہ! کیا بات ہے!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 5: Famous Poets -->
+        <section id="famous-poets" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-red-500 pb-2">5. مشہور شعراء - Famous Poets</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">5.1 کلاسیکی شعراء - Classical Poets</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-900 mb-2">میر تقی میر (1723-1810) - Mir Taqi Mir:</h4>
+                            <div class="space-y-3">
+                                <p class="text-red-800 urdu-text">"خدائے سخن" کے نام سے مشہور، غزل کے بادشاہ۔</p>
+                                <p class="text-red-700 text-sm">Known as "Khuda-e-Sukhan" (God of Poetry), master of ghazal.</p>
+                                
+                                <div class="bg-white p-3 rounded border-l-4 border-red-500">
+                                    <div class="urdu-poetry text-red-800">
+                                        <p>دل کے آئینے میں ہے تصویر یار کی</p>
+                                        <p>آنکھ بھر آئی ہے کیوں کار غبار کی</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">مرزا غالب (1797-1869) - Mirza Ghalib:</h4>
+                            <div class="space-y-3">
+                                <p class="text-blue-800 urdu-text">اردو اور فارسی کے عظیم شاعر، پیچیدہ خیالات کے ماہر۔</p>
+                                <p class="text-blue-700 text-sm">Great poet of Urdu and Persian, master of complex ideas.</p>
+                                
+                                <div class="bg-white p-3 rounded border-l-4 border-blue-500">
+                                    <div class="urdu-poetry text-blue-800">
+                                        <p>ہزاروں خواہشیں ایسی کہ ہر خواہش پہ دم نکلے</p>
+                                        <p>بہت نکلے میرے ارمان لیکن پھر بھی کم نکلے</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">علامہ اقبال (1877-1938) - Allama Iqbal:</h4>
+                            <div class="space-y-3">
+                                <p class="text-green-800 urdu-text">شاعر مشرق، فلسفی، خودی کے شاعر۔</p>
+                                <p class="text-green-700 text-sm">Poet of the East, philosopher, poet of selfhood.</p>
+                                
+                                <div class="bg-white p-3 rounded border-l-4 border-green-500">
+                                    <div class="urdu-poetry text-green-800">
+                                        <p>ستاروں سے آگے جہاں اور بھی ہیں</p>
+                                        <p>ابھی عشق کے امتحان اور بھی ہیں</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">5.2 جدید شعراء - Modern Poets</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-900 mb-2">فیض احمد فیض (1911-1984):</h4>
+                            <p class="text-purple-800 urdu-text">انقلابی شاعر، ترقی پسند تحریک کے علمبردار۔</p>
+                            <p class="text-purple-700 text-sm">Revolutionary poet, leader of progressive movement.</p>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-900 mb-2">احمد فراز (1931-2008):</h4>
+                            <p class="text-orange-800 urdu-text">رومانوی شاعر، آسان اور دلکش اسلوب۔</p>
+                            <p class="text-orange-700 text-sm">Romantic poet with simple and appealing style.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 6: Literary Forms -->
+        <section id="literary-forms" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-indigo-500 pb-2">6. ادبی اصناف - Literary Forms</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">6.1 منظوم اصناف - Poetic Forms</h3>
+                    
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-indigo-900 mb-2">مختلف اصناف کی تفصیل - Details of Various Forms:</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-indigo-800 font-medium urdu-text">قصیدہ - Qasida:</p>
+                                <p class="text-indigo-700 text-sm">تعریفی نظم، عام طور پر 15 سے زیادہ اشعار</p>
+                            </div>
+                            <div>
+                                <p class="text-indigo-800 font-medium urdu-text">مرثیہ - Marsiya:</p>
+                                <p class="text-indigo-700 text-sm">غم کا اظہار، خاص طور پر کربلا کے واقعات</p>
+                            </div>
+                            <div>
+                                <p class="text-indigo-800 font-medium urdu-text">مثنوی - Mathnavi:</p>
+                                <p class="text-indigo-700 text-sm">طویل کہانی، ہر شعر کے دونوں مصرعے ہم قافیہ</p>
+                            </div>
+                            <div>
+                                <p class="text-indigo-800 font-medium urdu-text">قطعہ - Qata:</p>
+                                <p class="text-indigo-700 text-sm">چار مصرعے، مکمل خیال کا اظہار</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 7: Modern Urdu -->
+        <section id="modern-urdu" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-yellow-500 pb-2">7. جدید اردو - Modern Urdu</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">7.1 ادبی تحریکیں - Literary Movements</h3>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-900 mb-2">اہم تحریکیں - Important Movements:</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="text-yellow-800 font-medium">ترقی پسند تحریک (Progressive Movement):</p>
+                                <p class="text-yellow-700 text-sm urdu-text">سماجی اصلاح، مزدور طبقے کے مسائل، انقلاب کی آواز۔</p>
+                            </div>
+                            <div>
+                                <p class="text-yellow-800 font-medium">جدیدیت (Modernism):</p>
+                                <p class="text-yellow-700 text-sm urdu-text">نئے موضوعات، تکنیک میں تبدیلی، آزاد نظم۔</p>
+                            </div>
+                            <div>
+                                <p class="text-yellow-800 font-medium">ما بعد جدیدیت (Post-modernism):</p>
+                                <p class="text-yellow-700 text-sm urdu-text">روایت سے بغاوت، نئے اسلوب، تجریدی شاعری۔</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 8: Writing Skills -->
+        <section id="writing-skills" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-teal-500 pb-2">8. تحریری مہارت - Writing Skills</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">8.1 خط نویسی - Letter Writing</h3>
+                    
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-teal-900 mb-2">خط کے اجزاء - Parts of a Letter:</h4>
+                        <ul class="text-teal-800 space-y-1">
+                            <li>• <strong>تاریخ (Date):</strong> اوپر دائیں طرف</li>
+                            <li>• <strong>خطاب (Salutation):</strong> محترم، عزیز</li>
+                            <li>• <strong>مضمون (Body):</strong> اصل پیغام</li>
+                            <li>• <strong>اختتام (Closing):</strong> آپ کا، خیر خواہ</li>
+                            <li>• <strong>دستخط (Signature):</strong> نام</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">8.2 مضمون نویسی - Essay Writing</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">مضمون کی ترتیب - Essay Structure:</h4>
+                        <ul class="text-blue-800 space-y-1">
+                            <li>• <strong>تمہید (Introduction):</strong> موضوع کا تعارف</li>
+                            <li>• <strong>تفصیل (Body):</strong> نکات کی وضاحت</li>
+                            <li>• <strong>خلاصہ (Conclusion):</strong> نتیجہ اور رائے</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 no-print">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>© 2025 EduSphere - Urdu Notes. Made by Gorav Soni.</p>
+            <p class="text-gray-400 text-sm mt-2">For educational purposes only - تعلیمی مقاصد کے لیے</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for table of contents
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

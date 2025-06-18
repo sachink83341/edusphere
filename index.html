@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSphere - Your Learning Universe</title>
+    <meta name="description" content="EduSphere is a comprehensive educational platform providing quality notes and resources for students across multiple subjects including Math, Science, Physics, History, and more.">
+    <meta name="keywords" content="education, learning, notes, students, math, science, physics, history, english grammar">
+    <meta name="author" content="Gorav Soni">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Three.js -->
+    <script src="https://unpkg.com/three@0.156.1/build/three.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Place this just after <body> -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3">
+                    <div>
+                        <h1 class="text-xl font-bold font-poppins text-blue-600">EduSphere</h1>
+                        <p class="text-xs text-gray-500">Your Learning Universe</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link active text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="subjects.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Subjects</a>
+                        <a href="grammar.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Grammar</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">Home</a>
+                <a href="subjects.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Subjects</a>
+                <a href="grammar.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Grammar</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Animation -->
+    <section class="relative bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center">
+        <div class="absolute inset-0" id="three-container"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold font-poppins text-gray-900 mb-6 leading-tight">
+                        Welcome to
+                        <span class="text-blue-600">EduSphere</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-8 font-medium">
+                        Your Learning Universe
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Explore comprehensive educational resources, detailed subject notes, and interactive learning materials designed specifically for school and college students. Master concepts with our expertly crafted content.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="subjects.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors transform hover:scale-105 duration-200">
+                            <i class="fas fa-book mr-2"></i>Explore Subjects
+                        </a>
+                        <a href="grammar.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition-colors transform hover:scale-105 duration-200">
+                            <i class="fas fa-language mr-2"></i>Learn Grammar
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:h-96 h-64" id="hero-animation">
+                    <!-- 3D Animation will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">
+                    Why Choose EduSphere?
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Discover the features that make EduSphere the perfect learning companion for students
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-blue-50 p-8 rounded-xl text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold font-poppins text-gray-900 mb-3">Comprehensive Subjects</h3>
+                    <p class="text-gray-600">
+                        Complete notes for Math, Science, Physics, History, Computer, English, Urdu, and Islamiat
+                    </p>
+                </div>
+                
+                <div class="feature-card bg-green-50 p-8 rounded-xl text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-language text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold font-poppins text-gray-900 mb-3">English Grammar</h3>
+                    <p class="text-gray-600">
+                        Master grammar with detailed explanations of tenses, modals, passive voice, and more
+                    </p>
+                </div>
+                
+                <div class="feature-card bg-purple-50 p-8 rounded-xl text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cube text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold font-poppins text-gray-900 mb-3">Interactive 3D</h3>
+                    <p class="text-gray-600">
+                        Engaging 3D visualizations and animations to enhance understanding
+                    </p>
+                </div>
+                
+                <div class="feature-card bg-orange-50 p-8 rounded-xl text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-orange-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-download text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold font-poppins text-gray-900 mb-3">Downloadable Notes</h3>
+                    <p class="text-gray-600">
+                        Download and save notes for offline study and reference
+                    </p>
+                </div>
+                
+                <div class="feature-card bg-red-50 p-8 rounded-xl text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-red-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold font-poppins text-gray-900 mb-3">Smart Search</h3>
+                    <p class="text-gray-600">
+                        Quickly find specific topics and content with our intelligent search feature
+                    </p>
+                </div>
+                
+                <div class="feature-card bg-indigo-50 p-8 rounded-xl text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold font-poppins text-gray-900 mb-3">Mobile Friendly</h3>
+                    <p class="text-gray-600">
+                        Access your learning materials anytime, anywhere on any device
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">
+                    Quick Access
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Jump straight to what you need
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-book text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-poppins text-gray-900">Subject Notes</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Access comprehensive notes for all major subjects including detailed explanations, examples, and key concepts.
+                    </p>
+                    <a href="subjects.html" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                        Explore All Subjects
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-spell-check text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-poppins text-gray-900">English Grammar</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Master English grammar with detailed explanations of tenses, voice, speech, and all essential grammar topics.
+                    </p>
+                    <a href="grammar.html" class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 transition-colors">
+                        Learn Grammar
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3 filter invert">
+                        <div>
+                            <h3 class="text-xl font-bold font-poppins">EduSphere</h3>
+                            <p class="text-gray-400 text-sm">Your Learning Universe</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        EduSphere is dedicated to providing high-quality educational resources for students. 
+                        Our comprehensive notes and interactive content help students excel in their studies.
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Made by <span class="text-blue-400 font-semibold">Gorav Soni</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="subjects.html" class="text-gray-400 hover:text-white transition-colors">Subjects</a></li>
+                        <li><a href="grammar.html" class="text-gray-400 hover:text-white transition-colors">Grammar</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Subjects</h4>
+                    <ul class="space-y-2">
+                        <li><a href="subjects.html#math" class="text-gray-400 hover:text-white transition-colors">Mathematics</a></li>
+                        <li><a href="subjects.html#science" class="text-gray-400 hover:text-white transition-colors">Science</a></li>
+                        <li><a href="subjects.html#physics" class="text-gray-400 hover:text-white transition-colors">Physics</a></li>
+                        <li><a href="subjects.html#history" class="text-gray-400 hover:text-white transition-colors">History</a></li>
+                        <li><a href="subjects.html#computer" class="text-gray-400 hover:text-white transition-colors">Computer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 EduSphere. All rights reserved. Made by Gorav Soni.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/three-animations.js"></script>
+</body>
+</html>

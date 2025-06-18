@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar - EduSphere</title>
+    <meta name="description" content="Master English Grammar with comprehensive lessons on tenses, modals, passive voice, direct & indirect speech, and more at EduSphere.">
+    <meta name="keywords" content="english grammar, tenses, modals, passive voice, direct speech, indirect speech, articles, parts of speech">
+    <meta name="author" content="Gorav Soni">
+    
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/three@0.156.1/build/three.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Go Back Button -->
+    <div class="bg-gray-100 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <button onclick="goBack()" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Go Back</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3">
+                    <div>
+                        <h1 class="text-xl font-bold font-poppins text-blue-600">EduSphere</h1>
+                        <p class="text-xs text-gray-500">Your Learning Universe</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="subjects.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Subjects</a>
+                        <a href="grammar.html" class="nav-link active text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Grammar</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="subjects.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Subjects</a>
+                <a href="grammar.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">Grammar</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="bg-gradient-to-r from-green-600 to-blue-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold font-poppins mb-4">English Grammar</h1>
+            <p class="text-xl text-green-100 mb-8">Master the fundamentals of English grammar</p>
+            
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" id="grammar-search-input" placeholder="Search grammar topics..." 
+                           class="w-full px-6 py-4 text-gray-900 rounded-lg focus:outline-none focus:ring-4 focus:ring-green-300">
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grammar Topics Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Quick Topic Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <a href="#tenses" class="grammar-card bg-blue-500 text-white p-6 rounded-xl hover:bg-blue-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-clock text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Tenses</h3>
+                    <p class="text-blue-100 text-sm mt-2">Past, Present, Future</p>
+                </a>
+                
+                <a href="#modals" class="grammar-card bg-green-500 text-white p-6 rounded-xl hover:bg-green-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-question text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Modals</h3>
+                    <p class="text-green-100 text-sm mt-2">Can, Could, May, Might</p>
+                </a>
+                
+                <a href="#passive-voice" class="grammar-card bg-purple-500 text-white p-6 rounded-xl hover:bg-purple-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-exchange-alt text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Passive Voice</h3>
+                    <p class="text-purple-100 text-sm mt-2">Active to Passive</p>
+                </a>
+                
+                <a href="#speech" class="grammar-card bg-red-500 text-white p-6 rounded-xl hover:bg-red-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-quote-left text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Speech</h3>
+                    <p class="text-red-100 text-sm mt-2">Direct & Indirect</p>
+                </a>
+                
+                <a href="#articles" class="grammar-card bg-orange-500 text-white p-6 rounded-xl hover:bg-orange-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-font text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Articles</h3>
+                    <p class="text-orange-100 text-sm mt-2">A, An, The</p>
+                </a>
+                
+                <a href="#parts-of-speech" class="grammar-card bg-indigo-500 text-white p-6 rounded-xl hover:bg-indigo-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-list text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Parts of Speech</h3>
+                    <p class="text-indigo-100 text-sm mt-2">Noun, Verb, Adjective</p>
+                </a>
+                
+                <a href="#determiners" class="grammar-card bg-teal-500 text-white p-6 rounded-xl hover:bg-teal-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-hand-point-right text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Determiners</h3>
+                    <p class="text-teal-100 text-sm mt-2">This, That, These</p>
+                </a>
+                
+                <a href="#conjunctions" class="grammar-card bg-pink-500 text-white p-6 rounded-xl hover:bg-pink-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-link text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Conjunctions</h3>
+                    <p class="text-pink-100 text-sm mt-2">And, But, Or</p>
+                </a>
+            </div>
+
+            <!-- Detailed Grammar Topics -->
+
+            <!-- Tenses -->
+            <div id="tenses" class="grammar-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Tenses</h2>
+                        <p class="text-gray-600">Understanding Past, Present, and Future</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-gray-900 text-lg mb-2">Present Tense</h4>
+                                <div class="space-y-2">
+                                    <p class="text-gray-700"><strong>Simple Present:</strong> I write letters every day.</p>
+                                    <p class="text-gray-700"><strong>Present Continuous:</strong> I am writing a letter now.</p>
+                                    <p class="text-gray-700"><strong>Present Perfect:</strong> I have written three letters today.</p>
+                                    <p class="text-gray-700"><strong>Present Perfect Continuous:</strong> I have been writing for two hours.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-gray-900 text-lg mb-2">Past Tense</h4>
+                                <div class="space-y-2">
+                                    <p class="text-gray-700"><strong>Simple Past:</strong> I wrote a letter yesterday.</p>
+                                    <p class="text-gray-700"><strong>Past Continuous:</strong> I was writing when you called.</p>
+                                    <p class="text-gray-700"><strong>Past Perfect:</strong> I had written the letter before you arrived.</p>
+                                    <p class="text-gray-700"><strong>Past Perfect Continuous:</strong> I had been writing for hours.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-gray-900 text-lg mb-2">Future Tense</h4>
+                                <div class="space-y-2">
+                                    <p class="text-gray-700"><strong>Simple Future:</strong> I will write a letter tomorrow.</p>
+                                    <p class="text-gray-700"><strong>Future Continuous:</strong> I will be writing at 3 PM.</p>
+                                    <p class="text-gray-700"><strong>Future Perfect:</strong> I will have written the letter by evening.</p>
+                                    <p class="text-gray-700"><strong>Future Perfect Continuous:</strong> I will have been writing for three hours by then.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-3">Tense Usage Tips</h4>
+                            <ul class="text-sm text-blue-800 space-y-2">
+                                <li>• Present Perfect for completed actions affecting present</li>
+                                <li>• Past Perfect for actions before another past action</li>
+                                <li>• Future Perfect for actions completed before a future time</li>
+                                <li>• Continuous forms show ongoing actions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modals -->
+            <div id="modals" class="grammar-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-question text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Modal Verbs</h2>
+                        <p class="text-gray-600">Express possibility, ability, permission, and obligation</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Can / Could</h4>
+                            <p class="text-gray-600 mb-2"><strong>Ability:</strong></p>
+                            <p class="text-gray-700">• I can swim. (present ability)</p>
+                            <p class="text-gray-700">• I could swim when I was young. (past ability)</p>
+                            <p class="text-gray-600 mb-2 mt-2"><strong>Permission:</strong></p>
+                            <p class="text-gray-700">• Can I use your phone? (informal)</p>
+                            <p class="text-gray-700">• Could I borrow your book? (polite)</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">May / Might</h4>
+                            <p class="text-gray-600 mb-2"><strong>Permission:</strong></p>
+                            <p class="text-gray-700">• May I come in? (formal)</p>
+                            <p class="text-gray-600 mb-2 mt-2"><strong>Possibility:</strong></p>
+                            <p class="text-gray-700">• It may rain today. (50% chance)</p>
+                            <p class="text-gray-700">• It might rain today. (less certain)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Must / Have to</h4>
+                            <p class="text-gray-600 mb-2"><strong>Obligation:</strong></p>
+                            <p class="text-gray-700">• You must wear a seatbelt. (strong obligation)</p>
+                            <p class="text-gray-700">• I have to go to work. (external obligation)</p>
+                            <p class="text-gray-600 mb-2 mt-2"><strong>Certainty:</strong></p>
+                            <p class="text-gray-700">• He must be tired. (logical conclusion)</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Should / Ought to</h4>
+                            <p class="text-gray-600 mb-2"><strong>Advice:</strong></p>
+                            <p class="text-gray-700">• You should exercise regularly.</p>
+                            <p class="text-gray-700">• You ought to be more careful.</p>
+                            <p class="text-gray-600 mb-2 mt-2"><strong>Expectation:</strong></p>
+                            <p class="text-gray-700">• The train should arrive at 5 PM.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Passive Voice -->
+            <div id="passive-voice" class="grammar-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-exchange-alt text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Passive Voice</h2>
+                        <p class="text-gray-600">Converting active sentences to passive form</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-purple-900 mb-4">Formation: Subject + be + Past Participle (+ by agent)</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-medium text-purple-800 mb-2">Active Voice</h5>
+                                <ul class="space-y-1 text-purple-700">
+                                    <li>• John writes letters.</li>
+                                    <li>• Mary is cooking dinner.</li>
+                                    <li>• They have built a house.</li>
+                                    <li>• She will complete the project.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-medium text-purple-800 mb-2">Passive Voice</h5>
+                                <ul class="space-y-1 text-purple-700">
+                                    <li>• Letters are written by John.</li>
+                                    <li>• Dinner is being cooked by Mary.</li>
+                                    <li>• A house has been built by them.</li>
+                                    <li>• The project will be completed by her.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-gray-900 mb-2">When to Use Passive Voice</h4>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• When the doer is unknown: "The window was broken."</li>
+                                    <li>• When the action is more important: "The vaccine was developed."</li>
+                                    <li>• In formal writing: "Mistakes were made."</li>
+                                    <li>• To avoid responsibility: "The deadline was missed."</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-gray-900 mb-2">Passive with Different Tenses</h4>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• <strong>Present:</strong> The letter is written.</li>
+                                    <li>• <strong>Past:</strong> The letter was written.</li>
+                                    <li>• <strong>Future:</strong> The letter will be written.</li>
+                                    <li>• <strong>Present Perfect:</strong> The letter has been written.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct and Indirect Speech -->
+            <div id="speech" class="grammar-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-quote-left text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Direct & Indirect Speech</h2>
+                        <p class="text-gray-600">Reporting what someone said</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-red-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-red-900 mb-4">Direct Speech</h4>
+                            <p class="text-red-800 mb-3">Exact words spoken, enclosed in quotation marks.</p>
+                            <div class="space-y-2">
+                                <p class="text-red-700">• He said, "I am happy."</p>
+                                <p class="text-red-700">• She asked, "Where are you going?"</p>
+                                <p class="text-red-700">• They said, "We will come tomorrow."</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-4">Indirect Speech</h4>
+                            <p class="text-blue-800 mb-3">Reported speech without quotation marks.</p>
+                            <div class="space-y-2">
+                                <p class="text-blue-700">• He said that he was happy.</p>
+                                <p class="text-blue-700">• She asked where I was going.</p>
+                                <p class="text-blue-700">• They said that they would come the next day.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-3">Changes in Indirect Speech</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div>
+                                    <h5 class="font-medium text-gray-800 mb-2">Pronouns</h5>
+                                    <ul class="text-sm text-gray-700 space-y-1">
+                                        <li>I → he/she</li>
+                                        <li>you → I/he/she</li>
+                                        <li>we → they</li>
+                                        <li>my → his/her</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-gray-800 mb-2">Tenses</h5>
+                                    <ul class="text-sm text-gray-700 space-y-1">
+                                        <li>present → past</li>
+                                        <li>past → past perfect</li>
+                                        <li>will → would</li>
+                                        <li>can → could</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-gray-800 mb-2">Time/Place</h5>
+                                    <ul class="text-sm text-gray-700 space-y-1">
+                                        <li>today → that day</li>
+                                        <li>tomorrow → the next day</li>
+                                        <li>yesterday → the day before</li>
+                                        <li>here → there</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Articles -->
+            <div id="articles" class="grammar-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-font text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Articles</h2>
+                        <p class="text-gray-600">Using A, An, and The correctly</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Indefinite Article "A"</h4>
+                            <p class="text-gray-600 mb-2">Used before words beginning with consonant sounds:</p>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• A book</li>
+                                <li>• A university (sounds like "yoo")</li>
+                                <li>• A one-way street</li>
+                                <li>• A European country</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Indefinite Article "An"</h4>
+                            <p class="text-gray-600 mb-2">Used before words beginning with vowel sounds:</p>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• An apple</li>
+                                <li>• An honest man (silent 'h')</li>
+                                <li>• An umbrella</li>
+                                <li>• An hour (silent 'h')</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-2">Definite Article "The"</h4>
+                            <p class="text-gray-600 mb-2">Used for specific nouns:</p>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• The book I gave you</li>
+                                <li>• The sun, the moon</li>
+                                <li>• The first time</li>
+                                <li>• The United States</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-orange-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-orange-900 mb-2">No Article Needed</h4>
+                    <p class="text-orange-800 text-sm">General plural nouns, abstract nouns, proper nouns, meals, languages, sports, subjects</p>
+                    <p class="text-orange-700 text-sm mt-1">Examples: Books are useful. Life is beautiful. I study English. I play football.</p>
+                </div>
+            </div>
+
+            <!-- Parts of Speech -->
+            <div id="parts-of-speech" class="grammar-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-list text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Parts of Speech</h2>
+                        <p class="text-gray-600">The building blocks of sentences</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-indigo-900 mb-2">Nouns</h4>
+                        <p class="text-indigo-800 text-sm mb-2">Person, place, thing, idea</p>
+                        <ul class="text-indigo-700 text-sm space-y-1">
+                            <li>• Cat, London, love</li>
+                            <li>• Common/Proper</li>
+                            <li>• Concrete/Abstract</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">Verbs</h4>
+                        <p class="text-blue-800 text-sm mb-2">Action or state of being</p>
+                        <ul class="text-blue-700 text-sm space-y-1">
+                            <li>• Run, is, think</li>
+                            <li>• Action/Linking</li>
+                            <li>• Regular/Irregular</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-900 mb-2">Adjectives</h4>
+                        <p class="text-green-800 text-sm mb-2">Describe nouns</p>
+                        <ul class="text-green-700 text-sm space-y-1">
+                            <li>• Big, beautiful, smart</li>
+                            <li>• Comparative: bigger</li>
+                            <li>• Superlative: biggest</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-purple-900 mb-2">Adverbs</h4>
+                        <p class="text-purple-800 text-sm mb-2">Modify verbs, adjectives</p>
+                        <ul class="text-purple-700 text-sm space-y-1">
+                            <li>• Quickly, very, often</li>
+                            <li>• Usually end in -ly</li>
+                            <li>• Tell how, when, where</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-red-900 mb-2">Pronouns</h4>
+                        <p class="text-red-800 text-sm mb-2">Replace nouns</p>
+                        <ul class="text-red-700 text-sm space-y-1">
+                            <li>• I, you, he, she, it</li>
+                            <li>• Personal/Possessive</li>
+                            <li>• Demonstrative/Relative</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-900 mb-2">Prepositions</h4>
+                        <p class="text-yellow-800 text-sm mb-2">Show relationships</p>
+                        <ul class="text-yellow-700 text-sm space-y-1">
+                            <li>• In, on, at, by, with</li>
+                            <li>• Location/Time</li>
+                            <li>• Direction/Manner</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-pink-900 mb-2">Conjunctions</h4>
+                        <p class="text-pink-800 text-sm mb-2">Connect words/phrases</p>
+                        <ul class="text-pink-700 text-sm space-y-1">
+                            <li>• And, but, or, because</li>
+                            <li>• Coordinating</li>
+                            <li>• Subordinating</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-teal-900 mb-2">Interjections</h4>
+                        <p class="text-teal-800 text-sm mb-2">Express emotion</p>
+                        <ul class="text-teal-700 text-sm space-y-1">
+                            <li>• Oh! Wow! Alas!</li>
+                            <li>• Usually followed by !</li>
+                            <li>• Show strong feeling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Determiners -->
+            <div id="determiners" class="grammar-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-teal-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-hand-point-right text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Determiners</h2>
+                        <p class="text-gray-600">Words that introduce and specify nouns</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="border-l-4 border-teal-500 pl-4">
+                        <h4 class="font-semibold text-gray-900 mb-2">Demonstrative</h4>
+                        <p class="text-gray-600 mb-2">Point to specific nouns:</p>
+                        <ul class="text-gray-700 space-y-1">
+                            <li>• <strong>This</strong> book (singular, near)</li>
+                            <li>• <strong>That</strong> car (singular, far)</li>
+                            <li>• <strong>These</strong> books (plural, near)</li>
+                            <li>• <strong>Those</strong> cars (plural, far)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-teal-500 pl-4">
+                        <h4 class="font-semibold text-gray-900 mb-2">Possessive</h4>
+                        <p class="text-gray-600 mb-2">Show ownership:</p>
+                        <ul class="text-gray-700 space-y-1">
+                            <li>• <strong>My</strong> house</li>
+                            <li>• <strong>Your</strong> friend</li>
+                            <li>• <strong>His/Her</strong> bag</li>
+                            <li>• <strong>Our/Their</strong> school</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-teal-500 pl-4">
+                        <h4 class="font-semibold text-gray-900 mb-2">Quantifiers</h4>
+                        <p class="text-gray-600 mb-2">Express quantity:</p>
+                        <ul class="text-gray-700 space-y-1">
+                            <li>• <strong>Some/Any</strong> milk</li>
+                            <li>• <strong>Many/Few</strong> books</li>
+                            <li>• <strong>Much/Little</strong> water</li>
+                            <li>• <strong>All/Most</strong> students</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conjunctions -->
+            <div id="conjunctions" class="grammar-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-pink-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-link text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Conjunctions</h2>
+                        <p class="text-gray-600">Connecting words, phrases, and clauses</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-pink-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-3">Coordinating Conjunctions</h4>
+                            <p class="text-gray-600 mb-2">Connect equal parts (FANBOYS):</p>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• <strong>For:</strong> I stayed home, for it was raining.</li>
+                                <li>• <strong>And:</strong> I like tea and coffee.</li>
+                                <li>• <strong>Nor:</strong> He doesn't smoke, nor does he drink.</li>
+                                <li>• <strong>But:</strong> I'm tired, but I'll continue.</li>
+                                <li>• <strong>Or:</strong> Would you like tea or coffee?</li>
+                                <li>• <strong>Yet:</strong> It's expensive, yet worth it.</li>
+                                <li>• <strong>So:</strong> I was late, so I missed the bus.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-pink-500 pl-4">
+                            <h4 class="font-semibold text-gray-900 mb-3">Subordinating Conjunctions</h4>
+                            <p class="text-gray-600 mb-2">Connect dependent to independent clauses:</p>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• <strong>Because:</strong> I left because it was late.</li>
+                                <li>• <strong>Although:</strong> Although tired, I continued.</li>
+                                <li>• <strong>When:</strong> Call me when you arrive.</li>
+                                <li>• <strong>If:</strong> If it rains, we'll stay inside.</li>
+                                <li>• <strong>Since:</strong> Since you're here, let's start.</li>
+                                <li>• <strong>Unless:</strong> Unless you hurry, you'll be late.</li>
+                                <li>• <strong>While:</strong> While studying, I listen to music.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3 filter invert">
+                        <div>
+                            <h3 class="text-xl font-bold font-poppins">EduSphere</h3>
+                            <p class="text-gray-400 text-sm">Your Learning Universe</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        EduSphere is dedicated to providing high-quality educational resources for students.
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Made by <span class="text-blue-400 font-semibold">Gorav Soni</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="subjects.html" class="text-gray-400 hover:text-white transition-colors">Subjects</a></li>
+                        <li><a href="grammar.html" class="text-gray-400 hover:text-white transition-colors">Grammar</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Grammar Topics</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#tenses" class="text-gray-400 hover:text-white transition-colors">Tenses</a></li>
+                        <li><a href="#modals" class="text-gray-400 hover:text-white transition-colors">Modals</a></li>
+                        <li><a href="#passive-voice" class="text-gray-400 hover:text-white transition-colors">Passive Voice</a></li>
+                        <li><a href="#speech" class="text-gray-400 hover:text-white transition-colors">Speech</a></li>
+                        <li><a href="#articles" class="text-gray-400 hover:text-white transition-colors">Articles</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 EduSphere. All rights reserved. Made by Gorav Soni.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

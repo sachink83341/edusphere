@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Notes - EduSphere</title>
+    <meta name="description" content="Comprehensive Computer Science notes covering Programming, Algorithms, Data Structures, and Software Development for students.">
+    <meta name="author" content="Gorav Soni">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { font-size: 12pt; line-height: 1.4; }
+            h1 { font-size: 18pt; }
+            h2 { font-size: 16pt; }
+            h3 { font-size: 14pt; }
+        }
+        .code-block {
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        .keyword { color: #60a5fa; }
+        .string { color: #34d399; }
+        .comment { color: #9ca3af; font-style: italic; }
+        .number { color: #fbbf24; }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white py-6 no-print">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold font-poppins">Computer Science Notes</h1>
+                    <p class="text-indigo-100">Programming, algorithms, and computational thinking</p>
+                </div>
+                <button onclick="window.print()" class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-semibold hover:bg-indigo-50 transition-colors">
+                    <i class="fas fa-print mr-2"></i>Print Notes
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Table of Contents -->
+        <section class="bg-white rounded-xl shadow-lg p-6 mb-8 no-print">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-4">Table of Contents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ul class="space-y-2">
+                    <li><a href="#programming-fundamentals" class="text-blue-600 hover:text-blue-800">1. Programming Fundamentals</a></li>
+                    <li><a href="#data-structures" class="text-blue-600 hover:text-blue-800">2. Data Structures</a></li>
+                    <li><a href="#algorithms" class="text-blue-600 hover:text-blue-800">3. Algorithms</a></li>
+                    <li><a href="#oop" class="text-blue-600 hover:text-blue-800">4. Object-Oriented Programming</a></li>
+                </ul>
+                <ul class="space-y-2">
+                    <li><a href="#databases" class="text-blue-600 hover:text-blue-800">5. Database Management</a></li>
+                    <li><a href="#networks" class="text-blue-600 hover:text-blue-800">6. Computer Networks</a></li>
+                    <li><a href="#web-development" class="text-blue-600 hover:text-blue-800">7. Web Development</a></li>
+                    <li><a href="#software-engineering" class="text-blue-600 hover:text-blue-800">8. Software Engineering</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Chapter 1: Programming Fundamentals -->
+        <section id="programming-fundamentals" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-indigo-500 pb-2">1. Programming Fundamentals</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.1 Variables and Data Types</h3>
+                    
+                    <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-indigo-900 mb-2">Basic Data Types:</h4>
+                        <ul class="text-indigo-800 space-y-1">
+                            <li>• <strong>Integer:</strong> Whole numbers (int, long)</li>
+                            <li>• <strong>Float:</strong> Decimal numbers (float, double)</li>
+                            <li>• <strong>Character:</strong> Single characters (char)</li>
+                            <li>• <strong>String:</strong> Text sequences</li>
+                            <li>• <strong>Boolean:</strong> True/False values</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="code-block mb-4">
+<span class="comment">// Variable declaration examples in different languages</span>
+
+<span class="comment">// Python</span>
+<span class="keyword">int</span> age = <span class="number">25</span>
+<span class="keyword">float</span> height = <span class="number">5.9</span>
+<span class="keyword">str</span> name = <span class="string">"John"</span>
+<span class="keyword">bool</span> is_student = <span class="keyword">True</span>
+
+<span class="comment">// Java</span>
+<span class="keyword">int</span> age = <span class="number">25</span>;
+<span class="keyword">double</span> height = <span class="number">5.9</span>;
+<span class="keyword">String</span> name = <span class="string">"John"</span>;
+<span class="keyword">boolean</span> isStudent = <span class="keyword">true</span>;
+
+<span class="comment">// C++</span>
+<span class="keyword">int</span> age = <span class="number">25</span>;
+<span class="keyword">double</span> height = <span class="number">5.9</span>;
+<span class="keyword">string</span> name = <span class="string">"John"</span>;
+<span class="keyword">bool</span> isStudent = <span class="keyword">true</span>;
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.2 Control Structures</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">Conditional Statements:</h4>
+                            <div class="code-block text-sm">
+<span class="comment"># Python if-else</span>
+<span class="keyword">if</span> score >= <span class="number">90</span>:
+    grade = <span class="string">"A"</span>
+<span class="keyword">elif</span> score >= <span class="number">80</span>:
+    grade = <span class="string">"B"</span>
+<span class="keyword">else</span>:
+    grade = <span class="string">"C"</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">Loops:</h4>
+                            <div class="code-block text-sm">
+<span class="comment"># For loop</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):
+    print(i)
+
+<span class="comment"># While loop</span>
+count = <span class="number">0</span>
+<span class="keyword">while</span> count < <span class="number">5</span>:
+    print(count)
+    count += <span class="number">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.3 Functions</h3>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-purple-900 mb-2">Function Structure:</h4>
+                        <p class="text-purple-800 mb-2">Functions are reusable blocks of code that perform specific tasks.</p>
+                        <div class="code-block">
+<span class="comment"># Python function example</span>
+<span class="keyword">def</span> calculate_area(length, width):
+    <span class="string">"""Calculate the area of a rectangle"""</span>
+    area = length * width
+    <span class="keyword">return</span> area
+
+<span class="comment"># Function call</span>
+result = calculate_area(<span class="number">10</span>, <span class="number">5</span>)
+print(f<span class="string">"Area: {result}"</span>)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2: Data Structures -->
+        <section id="data-structures" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-blue-500 pb-2">2. Data Structures</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.1 Arrays and Lists</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-900 mb-2">Array Operations:</h4>
+                        <div class="code-block">
+<span class="comment"># Python list operations</span>
+numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]
+
+<span class="comment"># Access elements</span>
+first_element = numbers[<span class="number">0</span>]  <span class="comment"># 1</span>
+last_element = numbers[-<span class="number">1</span>]   <span class="comment"># 5</span>
+
+<span class="comment"># Modify elements</span>
+numbers[<span class="number">0</span>] = <span class="number">10</span>
+
+<span class="comment"># Add elements</span>
+numbers.append(<span class="number">6</span>)
+numbers.insert(<span class="number">0</span>, <span class="number">0</span>)
+
+<span class="comment"># Remove elements</span>
+numbers.remove(<span class="number">3</span>)
+popped = numbers.pop()
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-900 mb-2">Time Complexity:</h4>
+                        <ul class="text-yellow-800 text-sm space-y-1">
+                            <li>• Access: O(1)</li>
+                            <li>• Search: O(n)</li>
+                            <li>• Insertion: O(n) - worst case</li>
+                            <li>• Deletion: O(n) - worst case</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.2 Stacks and Queues</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-900 mb-2">Stack (LIFO):</h4>
+                            <div class="code-block text-sm">
+<span class="comment"># Stack implementation</span>
+<span class="keyword">class</span> Stack:
+    <span class="keyword">def</span> __init__(self):
+        self.items = []
+    
+    <span class="keyword">def</span> push(self, item):
+        self.items.append(item)
+    
+    <span class="keyword">def</span> pop(self):
+        <span class="keyword">return</span> self.items.pop()
+    
+    <span class="keyword">def</span> is_empty(self):
+        <span class="keyword">return</span> len(self.items) == <span class="number">0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">Queue (FIFO):</h4>
+                            <div class="code-block text-sm">
+<span class="comment"># Queue using collections</span>
+<span class="keyword">from</span> collections <span class="keyword">import</span> deque
+
+queue = deque()
+
+<span class="comment"># Enqueue</span>
+queue.append(<span class="string">"first"</span>)
+queue.append(<span class="string">"second"</span>)
+
+<span class="comment"># Dequeue</span>
+first_out = queue.popleft()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.3 Linked Lists</h3>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-purple-900 mb-2">Singly Linked List:</h4>
+                        <div class="code-block">
+<span class="comment"># Node class</span>
+<span class="keyword">class</span> Node:
+    <span class="keyword">def</span> __init__(self, data):
+        self.data = data
+        self.next = <span class="keyword">None</span>
+
+<span class="comment"># Linked List class</span>
+<span class="keyword">class</span> LinkedList:
+    <span class="keyword">def</span> __init__(self):
+        self.head = <span class="keyword">None</span>
+    
+    <span class="keyword">def</span> append(self, data):
+        new_node = Node(data)
+        <span class="keyword">if</span> <span class="keyword">not</span> self.head:
+            self.head = new_node
+        <span class="keyword">else</span>:
+            current = self.head
+            <span class="keyword">while</span> current.next:
+                current = current.next
+            current.next = new_node
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.4 Trees and Graphs</h3>
+                    
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-orange-900 mb-2">Binary Tree Implementation:</h4>
+                        <div class="code-block">
+<span class="keyword">class</span> TreeNode:
+    <span class="keyword">def</span> __init__(self, data):
+        self.data = data
+        self.left = <span class="keyword">None</span>
+        self.right = <span class="keyword">None</span>
+
+<span class="comment"># Tree traversal methods</span>
+<span class="keyword">def</span> inorder_traversal(root):
+    <span class="keyword">if</span> root:
+        inorder_traversal(root.left)
+        print(root.data)
+        inorder_traversal(root.right)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: Algorithms -->
+        <section id="algorithms" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-green-500 pb-2">3. Algorithms</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.1 Searching Algorithms</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">Linear Search:</h4>
+                            <div class="code-block text-sm">
+<span class="keyword">def</span> linear_search(arr, target):
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr)):
+        <span class="keyword">if</span> arr[i] == target:
+            <span class="keyword">return</span> i
+    <span class="keyword">return</span> -<span class="number">1</span>
+
+<span class="comment"># Time Complexity: O(n)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">Binary Search:</h4>
+                            <div class="code-block text-sm">
+<span class="keyword">def</span> binary_search(arr, target):
+    left, right = <span class="number">0</span>, len(arr) - <span class="number">1</span>
+    
+    <span class="keyword">while</span> left <= right:
+        mid = (left + right) // <span class="number">2</span>
+        <span class="keyword">if</span> arr[mid] == target:
+            <span class="keyword">return</span> mid
+        <span class="keyword">elif</span> arr[mid] < target:
+            left = mid + <span class="number">1</span>
+        <span class="keyword">else</span>:
+            right = mid - <span class="number">1</span>
+    <span class="keyword">return</span> -<span class="number">1</span>
+
+<span class="comment"># Time Complexity: O(log n)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.2 Sorting Algorithms</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-900 mb-2">Bubble Sort:</h4>
+                            <div class="code-block">
+<span class="keyword">def</span> bubble_sort(arr):
+    n = len(arr)
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):
+        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, n - i - <span class="number">1</span>):
+            <span class="keyword">if</span> arr[j] > arr[j + <span class="number">1</span>]:
+                arr[j], arr[j + <span class="number">1</span>] = arr[j + <span class="number">1</span>], arr[j]
+    <span class="keyword">return</span> arr
+
+<span class="comment"># Time Complexity: O(n²)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-900 mb-2">Quick Sort:</h4>
+                            <div class="code-block">
+<span class="keyword">def</span> quick_sort(arr):
+    <span class="keyword">if</span> len(arr) <= <span class="number">1</span>:
+        <span class="keyword">return</span> arr
+    
+    pivot = arr[len(arr) // <span class="number">2</span>]
+    left = [x <span class="keyword">for</span> x <span class="keyword">in</span> arr <span class="keyword">if</span> x < pivot]
+    middle = [x <span class="keyword">for</span> x <span class="keyword">in</span> arr <span class="keyword">if</span> x == pivot]
+    right = [x <span class="keyword">for</span> x <span class="keyword">in</span> arr <span class="keyword">if</span> x > pivot]
+    
+    <span class="keyword">return</span> quick_sort(left) + middle + quick_sort(right)
+
+<span class="comment"># Average Time Complexity: O(n log n)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.3 Algorithm Analysis</h3>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-900 mb-2">Big O Notation:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <ul class="text-yellow-800 space-y-1">
+                                    <li>• <strong>O(1):</strong> Constant time</li>
+                                    <li>• <strong>O(log n):</strong> Logarithmic time</li>
+                                    <li>• <strong>O(n):</strong> Linear time</li>
+                                    <li>• <strong>O(n log n):</strong> Linearithmic time</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="text-yellow-800 space-y-1">
+                                    <li>• <strong>O(n²):</strong> Quadratic time</li>
+                                    <li>• <strong>O(n³):</strong> Cubic time</li>
+                                    <li>• <strong>O(2ⁿ):</strong> Exponential time</li>
+                                    <li>• <strong>O(n!):</strong> Factorial time</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 4: Object-Oriented Programming -->
+        <section id="oop" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-purple-500 pb-2">4. Object-Oriented Programming</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">4.1 Classes and Objects</h3>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-purple-900 mb-2">Class Definition:</h4>
+                        <div class="code-block">
+<span class="keyword">class</span> Student:
+    <span class="comment"># Class variable</span>
+    school_name = <span class="string">"EduSphere Academy"</span>
+    
+    <span class="keyword">def</span> __init__(self, name, age, grade):
+        <span class="comment"># Instance variables</span>
+        self.name = name
+        self.age = age
+        self.grade = grade
+        self.courses = []
+    
+    <span class="keyword">def</span> add_course(self, course):
+        self.courses.append(course)
+    
+    <span class="keyword">def</span> get_info(self):
+        <span class="keyword">return</span> f<span class="string">"Name: {self.name}, Age: {self.age}, Grade: {self.grade}"</span>
+
+<span class="comment"># Creating objects</span>
+student1 = Student(<span class="string">"Alice"</span>, <span class="number">16</span>, <span class="string">"10th"</span>)
+student2 = Student(<span class="string">"Bob"</span>, <span class="number">17</span>, <span class="string">"11th"</span>)
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">4.2 OOP Principles</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">Inheritance:</h4>
+                            <div class="code-block text-sm">
+<span class="keyword">class</span> Person:
+    <span class="keyword">def</span> __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    <span class="keyword">def</span> speak(self):
+        print(f<span class="string">"{self.name} is speaking"</span>)
+
+<span class="keyword">class</span> Student(Person):
+    <span class="keyword">def</span> __init__(self, name, age, grade):
+        super().__init__(name, age)
+        self.grade = grade
+    
+    <span class="keyword">def</span> study(self):
+        print(f<span class="string">"{self.name} is studying"</span>)
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">Encapsulation:</h4>
+                            <div class="code-block text-sm">
+<span class="keyword">class</span> BankAccount:
+    <span class="keyword">def</span> __init__(self, balance):
+        self.__balance = balance  <span class="comment"># Private</span>
+    
+    <span class="keyword">def</span> deposit(self, amount):
+        <span class="keyword">if</span> amount > <span class="number">0</span>:
+            self.__balance += amount
+    
+    <span class="keyword">def</span> get_balance(self):
+        <span class="keyword">return</span> self.__balance
+
+account = BankAccount(<span class="number">1000</span>)
+account.deposit(<span class="number">500</span>)
+print(account.get_balance())
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-900 mb-2">Polymorphism:</h4>
+                            <div class="code-block text-sm">
+<span class="keyword">class</span> Animal:
+    <span class="keyword">def</span> make_sound(self):
+        <span class="keyword">pass</span>
+
+<span class="keyword">class</span> Dog(Animal):
+    <span class="keyword">def</span> make_sound(self):
+        <span class="keyword">return</span> <span class="string">"Woof!"</span>
+
+<span class="keyword">class</span> Cat(Animal):
+    <span class="keyword">def</span> make_sound(self):
+        <span class="keyword">return</span> <span class="string">"Meow!"</span>
+
+animals = [Dog(), Cat()]
+<span class="keyword">for</span> animal <span class="keyword">in</span> animals:
+    print(animal.make_sound())
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-900 mb-2">Abstraction:</h4>
+                            <div class="code-block text-sm">
+<span class="keyword">from</span> abc <span class="keyword">import</span> ABC, abstractmethod
+
+<span class="keyword">class</span> Shape(ABC):
+    @abstractmethod
+    <span class="keyword">def</span> area(self):
+        <span class="keyword">pass</span>
+
+<span class="keyword">class</span> Rectangle(Shape):
+    <span class="keyword">def</span> __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    <span class="keyword">def</span> area(self):
+        <span class="keyword">return</span> self.width * self.height
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 5: Database Management -->
+        <section id="databases" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-red-500 pb-2">5. Database Management</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">5.1 SQL Basics</h3>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-red-900 mb-2">Basic SQL Commands:</h4>
+                        <div class="code-block">
+<span class="comment">-- Create a table</span>
+<span class="keyword">CREATE TABLE</span> students (
+    id <span class="keyword">INT PRIMARY KEY</span>,
+    name <span class="keyword">VARCHAR</span>(<span class="number">100</span>),
+    age <span class="keyword">INT</span>,
+    grade <span class="keyword">VARCHAR</span>(<span class="number">10</span>)
+);
+
+<span class="comment">-- Insert data</span>
+<span class="keyword">INSERT INTO</span> students (id, name, age, grade)
+<span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Alice'</span>, <span class="number">16</span>, <span class="string">'10th'</span>);
+
+<span class="comment">-- Select data</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> students;
+<span class="keyword">SELECT</span> name, age <span class="keyword">FROM</span> students <span class="keyword">WHERE</span> grade = <span class="string">'10th'</span>;
+
+<span class="comment">-- Update data</span>
+<span class="keyword">UPDATE</span> students <span class="keyword">SET</span> age = <span class="number">17</span> <span class="keyword">WHERE</span> id = <span class="number">1</span>;
+
+<span class="comment">-- Delete data</span>
+<span class="keyword">DELETE FROM</span> students <span class="keyword">WHERE</span> id = <span class="number">1</span>;
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">5.2 Database Design</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">Normalization Rules:</h4>
+                        <ul class="text-blue-800 space-y-1">
+                            <li>• <strong>1NF:</strong> Eliminate duplicate columns</li>
+                            <li>• <strong>2NF:</strong> Remove partial dependencies</li>
+                            <li>• <strong>3NF:</strong> Remove transitive dependencies</li>
+                            <li>• <strong>BCNF:</strong> Stronger version of 3NF</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 6: Computer Networks -->
+        <section id="networks" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-green-500 pb-2">6. Computer Networks</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">6.1 OSI Model</h3>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-900 mb-2">Seven Layers:</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <ul class="text-green-800 space-y-1">
+                                    <li>• <strong>7. Application:</strong> User interface</li>
+                                    <li>• <strong>6. Presentation:</strong> Data formatting</li>
+                                    <li>• <strong>5. Session:</strong> Connection management</li>
+                                    <li>• <strong>4. Transport:</strong> End-to-end delivery</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="text-green-800 space-y-1">
+                                    <li>• <strong>3. Network:</strong> Routing</li>
+                                    <li>• <strong>2. Data Link:</strong> Frame formatting</li>
+                                    <li>• <strong>1. Physical:</strong> Physical transmission</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">6.2 Network Protocols</h3>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-blue-900 mb-2">Common Protocols:</h4>
+                        <ul class="text-blue-800 space-y-1">
+                            <li>• <strong>HTTP/HTTPS:</strong> Web communication</li>
+                            <li>• <strong>TCP/UDP:</strong> Transport protocols</li>
+                            <li>• <strong>IP:</strong> Internet Protocol</li>
+                            <li>• <strong>DNS:</strong> Domain Name System</li>
+                            <li>• <strong>SMTP:</strong> Email transfer</li>
+                            <li>• <strong>FTP:</strong> File transfer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 7: Web Development -->
+        <section id="web-development" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-yellow-500 pb-2">7. Web Development</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">7.1 Frontend Technologies</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-900 mb-2">HTML5:</h4>
+                            <div class="code-block text-sm">
+<span class="keyword">&lt;!DOCTYPE</span> html<span class="keyword">&gt;</span>
+<span class="keyword">&lt;html&gt;</span>
+<span class="keyword">&lt;head&gt;</span>
+  <span class="keyword">&lt;title&gt;</span>Page Title<span class="keyword">&lt;/title&gt;</span>
+<span class="keyword">&lt;/head&gt;</span>
+<span class="keyword">&lt;body&gt;</span>
+  <span class="keyword">&lt;h1&gt;</span>Hello World<span class="keyword">&lt;/h1&gt;</span>
+  <span class="keyword">&lt;p&gt;</span>This is a paragraph<span class="keyword">&lt;/p&gt;</span>
+<span class="keyword">&lt;/body&gt;</span>
+<span class="keyword">&lt;/html&gt;</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">CSS3:</h4>
+                            <div class="code-block text-sm">
+<span class="comment">/* CSS Styling */</span>
+body {
+  font-family: Arial;
+  margin: <span class="number">0</span>;
+  padding: <span class="number">20px</span>;
+}
+
+.container {
+  max-width: <span class="number">1200px</span>;
+  margin: <span class="number">0</span> auto;
+}
+
+.btn {
+  background: <span class="string">#007bff</span>;
+  color: white;
+  padding: <span class="number">10px</span> <span class="number">20px</span>;
+  border: none;
+  border-radius: <span class="number">5px</span>;
+}
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-yellow-900 mb-2">JavaScript:</h4>
+                            <div class="code-block text-sm">
+<span class="comment">// DOM Manipulation</span>
+<span class="keyword">const</span> button = document
+  .getElementById(<span class="string">'myButton'</span>);
+
+button.addEventListener(<span class="string">'click'</span>, 
+  <span class="keyword">function</span>() {
+    alert(<span class="string">'Button clicked!'</span>);
+  }
+);
+
+<span class="comment">// AJAX Request</span>
+fetch(<span class="string">'api/data'</span>)
+  .then(response => response.json())
+  .then(data => console.log(data));
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">7.2 Backend Development</h3>
+                    
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-indigo-900 mb-2">RESTful API Example (Node.js/Express):</h4>
+                        <div class="code-block">
+<span class="keyword">const</span> express = require(<span class="string">'express'</span>);
+<span class="keyword">const</span> app = express();
+
+<span class="comment">// Middleware</span>
+app.use(express.json());
+
+<span class="comment">// Routes</span>
+app.get(<span class="string">'/api/students'</span>, (req, res) => {
+  res.json(students);
+});
+
+app.post(<span class="string">'/api/students'</span>, (req, res) => {
+  <span class="keyword">const</span> newStudent = req.body;
+  students.push(newStudent);
+  res.status(<span class="number">201</span>).json(newStudent);
+});
+
+app.listen(<span class="number">3000</span>, () => {
+  console.log(<span class="string">'Server running on port 3000'</span>);
+});
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 8: Software Engineering -->
+        <section id="software-engineering" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-indigo-500 pb-2">8. Software Engineering</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">8.1 Software Development Life Cycle</h3>
+                    
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-indigo-900 mb-2">SDLC Phases:</h4>
+                        <ul class="text-indigo-800 space-y-1">
+                            <li>• <strong>Planning:</strong> Define requirements and scope</li>
+                            <li>• <strong>Analysis:</strong> Analyze feasibility and resources</li>
+                            <li>• <strong>Design:</strong> Create system architecture</li>
+                            <li>• <strong>Implementation:</strong> Write and test code</li>
+                            <li>• <strong>Testing:</strong> Verify system functionality</li>
+                            <li>• <strong>Deployment:</strong> Release to production</li>
+                            <li>• <strong>Maintenance:</strong> Ongoing support and updates</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">8.2 Version Control</h3>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">Git Commands:</h4>
+                        <div class="code-block">
+<span class="comment"># Initialize repository</span>
+git init
+
+<span class="comment"># Add files to staging</span>
+git add .
+git add filename.txt
+
+<span class="comment"># Commit changes</span>
+git commit -m <span class="string">"Initial commit"</span>
+
+<span class="comment"># Create and switch branches</span>
+git branch feature-branch
+git checkout feature-branch
+
+<span class="comment"># Merge branches</span>
+git checkout main
+git merge feature-branch
+
+<span class="comment"># Remote repository</span>
+git remote add origin https://github.com/user/repo.git
+git push origin main
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">8.3 Testing</h3>
+                    
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-red-900 mb-2">Types of Testing:</h4>
+                        <ul class="text-red-800 space-y-1">
+                            <li>• <strong>Unit Testing:</strong> Test individual components</li>
+                            <li>• <strong>Integration Testing:</strong> Test component interactions</li>
+                            <li>• <strong>System Testing:</strong> Test complete system</li>
+                            <li>• <strong>Acceptance Testing:</strong> User acceptance validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 no-print">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>© 2025 EduSphere - Computer Science Notes. Made by Gorav Soni.</p>
+            <p class="text-gray-400 text-sm mt-2">For educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for table of contents
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

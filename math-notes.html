@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Notes - EduSphere</title>
+    <meta name="description" content="Comprehensive Mathematics notes covering Algebra, Geometry, Calculus, and Statistics for students.">
+    <meta name="author" content="Gorav Soni">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { font-size: 12pt; line-height: 1.4; }
+            h1 { font-size: 18pt; }
+            h2 { font-size: 16pt; }
+            h3 { font-size: 14pt; }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-6 no-print">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold font-poppins">Mathematics Notes</h1>
+                    <p class="text-blue-100">Comprehensive study material for students</p>
+                </div>
+                <button onclick="window.print()" class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-print mr-2"></i>Print Notes
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Table of Contents -->
+        <section class="bg-white rounded-xl shadow-lg p-6 mb-8 no-print">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-4">Table of Contents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ul class="space-y-2">
+                    <li><a href="#algebra" class="text-blue-600 hover:text-blue-800">1. Algebra</a></li>
+                    <li><a href="#geometry" class="text-blue-600 hover:text-blue-800">2. Geometry</a></li>
+                    <li><a href="#calculus" class="text-blue-600 hover:text-blue-800">3. Calculus</a></li>
+                    <li><a href="#statistics" class="text-blue-600 hover:text-blue-800">4. Statistics & Probability</a></li>
+                </ul>
+                <ul class="space-y-2">
+                    <li><a href="#trigonometry" class="text-blue-600 hover:text-blue-800">5. Trigonometry</a></li>
+                    <li><a href="#functions" class="text-blue-600 hover:text-blue-800">6. Functions</a></li>
+                    <li><a href="#matrices" class="text-blue-600 hover:text-blue-800">7. Matrices</a></li>
+                    <li><a href="#formulas" class="text-blue-600 hover:text-blue-800">8. Important Formulas</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Chapter 1: Algebra -->
+        <section id="algebra" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-blue-500 pb-2">1. Algebra</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.1 Linear Equations</h3>
+                    <p class="text-gray-700 mb-3">A linear equation is an equation of the form ax + b = 0, where a and b are constants and a ≠ 0.</p>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-900 mb-2">Standard Form:</h4>
+                        <p class="text-blue-800">ax + b = 0</p>
+                        <p class="text-blue-800">Solution: x = -b/a</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">Example:</h4>
+                        <p class="text-gray-700">Solve: 2x + 6 = 0</p>
+                        <p class="text-gray-700">Solution: 2x = -6</p>
+                        <p class="text-gray-700">x = -6/2 = -3</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.2 Quadratic Equations</h3>
+                    <p class="text-gray-700 mb-3">A quadratic equation is an equation of the form ax² + bx + c = 0, where a ≠ 0.</p>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-900 mb-2">Quadratic Formula:</h4>
+                        <p class="text-blue-800">x = (-b ± √(b² - 4ac)) / 2a</p>
+                        <p class="text-blue-800 text-sm mt-2">Discriminant: Δ = b² - 4ac</p>
+                        <ul class="text-blue-800 text-sm mt-2">
+                            <li>• If Δ > 0: Two real distinct roots</li>
+                            <li>• If Δ = 0: One real root (repeated)</li>
+                            <li>• If Δ < 0: No real roots</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">Example:</h4>
+                        <p class="text-gray-700">Solve: x² - 5x + 6 = 0</p>
+                        <p class="text-gray-700">Using factoring: (x - 2)(x - 3) = 0</p>
+                        <p class="text-gray-700">Solutions: x = 2 or x = 3</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">1.3 Polynomials</h3>
+                    <p class="text-gray-700 mb-3">A polynomial is an expression consisting of variables and coefficients involving operations of addition, subtraction, multiplication, and non-negative integer exponents.</p>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-900 mb-2">Types of Polynomials:</h4>
+                        <ul class="text-green-800 space-y-1">
+                            <li>• <strong>Monomial:</strong> Single term (e.g., 3x²)</li>
+                            <li>• <strong>Binomial:</strong> Two terms (e.g., x + 2)</li>
+                            <li>• <strong>Trinomial:</strong> Three terms (e.g., x² + 2x + 1)</li>
+                            <li>• <strong>Degree:</strong> Highest power of the variable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2: Geometry -->
+        <section id="geometry" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-green-500 pb-2">2. Geometry</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.1 Basic Geometric Shapes</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">Circle</h4>
+                            <ul class="text-blue-800 text-sm space-y-1">
+                                <li>• Area = πr²</li>
+                                <li>• Circumference = 2πr</li>
+                                <li>• Diameter = 2r</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">Rectangle</h4>
+                            <ul class="text-green-800 text-sm space-y-1">
+                                <li>• Area = length × width</li>
+                                <li>• Perimeter = 2(l + w)</li>
+                                <li>• Diagonal = √(l² + w²)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-900 mb-2">Triangle</h4>
+                            <ul class="text-purple-800 text-sm space-y-1">
+                                <li>• Area = ½ × base × height</li>
+                                <li>• Perimeter = a + b + c</li>
+                                <li>• Heron's formula: A = √s(s-a)(s-b)(s-c)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-900 mb-2">Square</h4>
+                            <ul class="text-orange-800 text-sm space-y-1">
+                                <li>• Area = side²</li>
+                                <li>• Perimeter = 4 × side</li>
+                                <li>• Diagonal = side × √2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">2.2 Coordinate Geometry</h3>
+                    <p class="text-gray-700 mb-3">Coordinate geometry deals with the study of geometry using coordinates.</p>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-900 mb-2">Important Formulas:</h4>
+                        <ul class="text-yellow-800 space-y-1">
+                            <li>• Distance between two points: d = √[(x₂-x₁)² + (y₂-y₁)²]</li>
+                            <li>• Midpoint: M = ((x₁+x₂)/2, (y₁+y₂)/2)</li>
+                            <li>• Slope of a line: m = (y₂-y₁)/(x₂-x₁)</li>
+                            <li>• Equation of a line: y = mx + c</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: Calculus -->
+        <section id="calculus" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-purple-500 pb-2">3. Calculus</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.1 Limits</h3>
+                    <p class="text-gray-700 mb-3">A limit describes the behavior of a function as its input approaches a particular value.</p>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-purple-900 mb-2">Limit Notation:</h4>
+                        <p class="text-purple-800">lim(x→a) f(x) = L</p>
+                        <p class="text-purple-800 text-sm mt-2">This reads as "the limit of f(x) as x approaches a equals L"</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">Important Limit Rules:</h4>
+                        <ul class="text-gray-700 space-y-1">
+                            <li>• lim(x→a) c = c (constant)</li>
+                            <li>• lim(x→a) x = a</li>
+                            <li>• lim(x→a) [f(x) + g(x)] = lim(x→a) f(x) + lim(x→a) g(x)</li>
+                            <li>• lim(x→a) [f(x) × g(x)] = lim(x→a) f(x) × lim(x→a) g(x)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.2 Derivatives</h3>
+                    <p class="text-gray-700 mb-3">The derivative of a function represents the rate of change or slope of the function at any point.</p>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-900 mb-2">Derivative Definition:</h4>
+                        <p class="text-blue-800">f'(x) = lim(h→0) [f(x+h) - f(x)]/h</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-green-900 mb-2">Common Derivatives:</h4>
+                        <ul class="text-green-800 space-y-1">
+                            <li>• d/dx(c) = 0</li>
+                            <li>• d/dx(x) = 1</li>
+                            <li>• d/dx(xⁿ) = nx^(n-1)</li>
+                            <li>• d/dx(sin x) = cos x</li>
+                            <li>• d/dx(cos x) = -sin x</li>
+                            <li>• d/dx(eˣ) = eˣ</li>
+                            <li>• d/dx(ln x) = 1/x</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">3.3 Integration</h3>
+                    <p class="text-gray-700 mb-3">Integration is the reverse process of differentiation. It's used to find areas, volumes, and accumulated quantities.</p>
+                    
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-orange-900 mb-2">Basic Integration Rules:</h4>
+                        <ul class="text-orange-800 space-y-1">
+                            <li>• ∫ c dx = cx + C</li>
+                            <li>• ∫ x dx = x²/2 + C</li>
+                            <li>• ∫ xⁿ dx = x^(n+1)/(n+1) + C (n ≠ -1)</li>
+                            <li>• ∫ sin x dx = -cos x + C</li>
+                            <li>• ∫ cos x dx = sin x + C</li>
+                            <li>• ∫ eˣ dx = eˣ + C</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 4: Statistics & Probability -->
+        <section id="statistics" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-red-500 pb-2">4. Statistics & Probability</h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">4.1 Measures of Central Tendency</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-900 mb-2">Mean</h4>
+                            <p class="text-red-800 text-sm">Average of all values</p>
+                            <p class="text-red-800">x̄ = Σx/n</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-900 mb-2">Median</h4>
+                            <p class="text-blue-800 text-sm">Middle value when data is ordered</p>
+                            <p class="text-blue-800">50th percentile</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-900 mb-2">Mode</h4>
+                            <p class="text-green-800 text-sm">Most frequently occurring value</p>
+                            <p class="text-green-800">Highest frequency</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">4.2 Probability</h3>
+                    <p class="text-gray-700 mb-3">Probability is the measure of the likelihood of an event occurring.</p>
+                    
+                    <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-purple-900 mb-2">Basic Probability Formula:</h4>
+                        <p class="text-purple-800">P(A) = Number of favorable outcomes / Total number of outcomes</p>
+                        <p class="text-purple-800 text-sm mt-2">Where 0 ≤ P(A) ≤ 1</p>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-yellow-900 mb-2">Probability Rules:</h4>
+                        <ul class="text-yellow-800 space-y-1">
+                            <li>• P(A ∪ B) = P(A) + P(B) - P(A ∩ B)</li>
+                            <li>• P(A') = 1 - P(A)</li>
+                            <li>• P(A ∩ B) = P(A) × P(B|A)</li>
+                            <li>• For independent events: P(A ∩ B) = P(A) × P(B)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional chapters would continue here... -->
+        
+        <!-- Important Formulas Reference -->
+        <section id="formulas" class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold font-poppins text-gray-900 mb-6 border-b-2 border-indigo-500 pb-2">Important Formulas Reference</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Algebraic Identities</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <ul class="text-gray-700 space-y-1 text-sm">
+                            <li>• (a + b)² = a² + 2ab + b²</li>
+                            <li>• (a - b)² = a² - 2ab + b²</li>
+                            <li>• a² - b² = (a + b)(a - b)</li>
+                            <li>• (a + b)³ = a³ + 3a²b + 3ab² + b³</li>
+                            <li>• (a - b)³ = a³ - 3a²b + 3ab² - b³</li>
+                            <li>• a³ + b³ = (a + b)(a² - ab + b²)</li>
+                            <li>• a³ - b³ = (a - b)(a² + ab + b²)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Trigonometric Identities</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <ul class="text-gray-700 space-y-1 text-sm">
+                            <li>• sin²θ + cos²θ = 1</li>
+                            <li>• tan θ = sin θ / cos θ</li>
+                            <li>• 1 + tan²θ = sec²θ</li>
+                            <li>• 1 + cot²θ = csc²θ</li>
+                            <li>• sin(A + B) = sin A cos B + cos A sin B</li>
+                            <li>• cos(A + B) = cos A cos B - sin A sin B</li>
+                            <li>• sin 2θ = 2 sin θ cos θ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 no-print">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>© 2025 EduSphere - Mathematics Notes. Made by Gorav Soni.</p>
+            <p class="text-gray-400 text-sm mt-2">For educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for table of contents
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

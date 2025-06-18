@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Notes - EduSphere</title>
+    <meta name="description" content="Access comprehensive subject notes for Math, Science, Physics, History, Computer, English, Urdu, and Islamiat at EduSphere.">
+    <meta name="keywords" content="subject notes, math, science, physics, history, computer, english, urdu, islamiat, education">
+    <meta name="author" content="Gorav Soni">
+    
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/three@0.156.1/build/three.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Go Back Button -->
+    <div class="bg-gray-100 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+            <button onclick="goBack()" class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Go Back</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3">
+                    <div>
+                        <h1 class="text-xl font-bold font-poppins text-blue-600">EduSphere</h1>
+                        <p class="text-xs text-gray-500">Your Learning Universe</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="subjects.html" class="nav-link active text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium transition-colors">Subjects</a>
+                        <a href="grammar.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Grammar</a>
+                        <a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
+                <a href="subjects.html" class="block px-3 py-2 rounded-md text-base font-medium text-blue-600 bg-blue-50">Subjects</a>
+                <a href="grammar.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Grammar</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold font-poppins mb-4">Subject Notes</h1>
+            <p class="text-xl text-blue-100 mb-8">Comprehensive study materials for all major subjects</p>
+            
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="Search subjects, topics, or keywords..." 
+                           class="w-full px-6 py-4 text-gray-900 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Quick Subject Cards -->
+                <a href="#math" class="subject-card bg-blue-500 text-white p-6 rounded-xl hover:bg-blue-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-calculator text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Mathematics</h3>
+                    <p class="text-blue-100 text-sm mt-2">Algebra, Calculus, Geometry</p>
+                </a>
+                
+                <a href="#science" class="subject-card bg-green-500 text-white p-6 rounded-xl hover:bg-green-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-atom text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Science</h3>
+                    <p class="text-green-100 text-sm mt-2">Biology, Chemistry, Lab Work</p>
+                </a>
+                
+                <a href="#physics" class="subject-card bg-purple-500 text-white p-6 rounded-xl hover:bg-purple-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-rocket text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Physics</h3>
+                    <p class="text-purple-100 text-sm mt-2">Mechanics, Waves, Electricity</p>
+                </a>
+                
+                <a href="#history" class="subject-card bg-orange-500 text-white p-6 rounded-xl hover:bg-orange-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-landmark text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">History</h3>
+                    <p class="text-orange-100 text-sm mt-2">World History, Civilizations</p>
+                </a>
+                
+                <a href="#computer" class="subject-card bg-indigo-500 text-white p-6 rounded-xl hover:bg-indigo-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-laptop-code text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Computer</h3>
+                    <p class="text-indigo-100 text-sm mt-2">Programming, Algorithms</p>
+                </a>
+                
+                <a href="#english" class="subject-card bg-red-500 text-white p-6 rounded-xl hover:bg-red-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-book-open text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">English</h3>
+                    <p class="text-red-100 text-sm mt-2">Literature, Writing, Reading</p>
+                </a>
+                
+                <a href="#urdu" class="subject-card bg-teal-500 text-white p-6 rounded-xl hover:bg-teal-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-feather-alt text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Urdu</h3>
+                    <p class="text-teal-100 text-sm mt-2">Literature, Poetry, Grammar</p>
+                </a>
+                
+                <a href="#islamiat" class="subject-card bg-yellow-500 text-white p-6 rounded-xl hover:bg-yellow-600 transition-colors transform hover:scale-105 duration-200">
+                    <i class="fas fa-mosque text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold font-poppins">Islamiat</h3>
+                    <p class="text-yellow-100 text-sm mt-2">Islamic Studies, Quran</p>
+                </a>
+            </div>
+
+            <!-- Detailed Subject Sections -->
+            
+            <!-- Mathematics -->
+            <div id="math" class="subject-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-calculator text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Mathematics</h2>
+                        <p class="text-gray-600">Master mathematical concepts and problem-solving</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <h3 class="text-xl font-semibold mb-4">Key Topics Covered:</h3>
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Algebra</h4>
+                                <p class="text-gray-600">Linear equations, quadratic equations, polynomials, factorization, and algebraic expressions.</p>
+                            </div>
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Geometry</h4>
+                                <p class="text-gray-600">Triangles, circles, coordinate geometry, area and volume calculations, and geometric proofs.</p>
+                            </div>
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Calculus</h4>
+                                <p class="text-gray-600">Limits, derivatives, integrals, and applications of calculus in real-world problems.</p>
+                            </div>
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Statistics & Probability</h4>
+                                <p class="text-gray-600">Data analysis, probability distributions, statistical measures, and hypothesis testing.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                            <h4 class="font-semibold text-blue-900 mb-2">Sample Problem:</h4>
+                            <p class="text-blue-800 mb-2">Solve: 2x² + 5x - 3 = 0</p>
+                            <p class="text-blue-700 text-sm">Using the quadratic formula: x = (-b ± √(b²-4ac)) / 2a</p>
+                            <p class="text-blue-700 text-sm">Solution: x = 0.5 or x = -3</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Quick Facts</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• 15+ detailed chapters</li>
+                                <li>• 200+ solved examples</li>
+                                <li>• Practice exercises</li>
+                                <li>• Formula sheets</li>
+                            </ul>
+                        </div>
+                        <a href="downloads/math-notes.html" target="_blank" 
+                           class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>Download Notes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Science -->
+            <div id="science" class="subject-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-atom text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Science</h2>
+                        <p class="text-gray-600">Explore the wonders of biology and chemistry</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Biology</h4>
+                                <p class="text-gray-600">Cell structure, genetics, evolution, ecology, human anatomy, and plant biology.</p>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Chemistry</h4>
+                                <p class="text-gray-600">Atomic structure, chemical bonding, reactions, organic chemistry, and periodic table.</p>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Environmental Science</h4>
+                                <p class="text-gray-600">Climate change, conservation, pollution, renewable energy, and sustainable development.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 3D Solar System Container -->
+                        <div class="bg-gray-900 rounded-lg p-4 mb-6 h-48" id="solar-system-container">
+                            <p class="text-white text-center">Interactive Solar System Model</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Lab Experiments</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Chemical reactions</li>
+                                <li>• Microscopy techniques</li>
+                                <li>• pH testing</li>
+                                <li>• Plant biology</li>
+                            </ul>
+                        </div>
+                        <a href="downloads/science-notes.html" target="_blank" 
+                           class="block w-full bg-green-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>Download Notes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Physics -->
+            <div id="physics" class="subject-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Physics</h2>
+                        <p class="text-gray-600">Understanding the fundamental laws of nature</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Mechanics</h4>
+                                <p class="text-gray-600">Motion, forces, energy, momentum, and Newton's laws of motion.</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Electricity & Magnetism</h4>
+                                <p class="text-gray-600">Electric fields, circuits, magnetic fields, and electromagnetic induction.</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Waves & Optics</h4>
+                                <p class="text-gray-600">Sound waves, light properties, reflection, refraction, and wave interference.</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Modern Physics</h4>
+                                <p class="text-gray-600">Quantum mechanics, atomic structure, radioactivity, and nuclear physics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Key Formulas</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• F = ma (Newton's 2nd Law)</li>
+                                <li>• E = mc² (Mass-Energy)</li>
+                                <li>• V = IR (Ohm's Law)</li>
+                                <li>• λf = v (Wave Equation)</li>
+                            </ul>
+                        </div>
+                        <a href="downloads/physics-notes.html" target="_blank" 
+                           class="block w-full bg-purple-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>Download Notes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History -->
+            <div id="history" class="subject-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-landmark text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">History</h2>
+                        <p class="text-gray-600">Journey through civilizations and significant events</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-orange-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Ancient Civilizations</h4>
+                                <p class="text-gray-600">Mesopotamia, Egypt, Indus Valley, Greece, and Rome - their culture, achievements, and legacy.</p>
+                            </div>
+                            <div class="border-l-4 border-orange-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Medieval Period</h4>
+                                <p class="text-gray-600">Islamic Golden Age, Byzantine Empire, Crusades, and the rise of kingdoms.</p>
+                            </div>
+                            <div class="border-l-4 border-orange-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Modern History</h4>
+                                <p class="text-gray-600">Industrial Revolution, World Wars, independence movements, and contemporary events.</p>
+                            </div>
+                            <div class="border-l-4 border-orange-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">South Asian History</h4>
+                                <p class="text-gray-600">Mughal Empire, British colonial period, partition of India, and Pakistan's formation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Key Periods</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Ancient (3500 BC - 500 AD)</li>
+                                <li>• Medieval (500 - 1500 AD)</li>
+                                <li>• Early Modern (1500 - 1800)</li>
+                                <li>• Contemporary (1800 - Present)</li>
+                            </ul>
+                        </div>
+                        <a href="downloads/history-notes.html" target="_blank" 
+                           class="block w-full bg-orange-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>Download Notes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer -->
+            <div id="computer" class="subject-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Computer Science</h2>
+                        <p class="text-gray-600">Programming, algorithms, and computational thinking</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-indigo-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Programming Fundamentals</h4>
+                                <p class="text-gray-600">Variables, data types, control structures, functions, and object-oriented programming.</p>
+                            </div>
+                            <div class="border-l-4 border-indigo-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Data Structures</h4>
+                                <p class="text-gray-600">Arrays, linked lists, stacks, queues, trees, and graphs with practical applications.</p>
+                            </div>
+                            <div class="border-l-4 border-indigo-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Algorithms</h4>
+                                <p class="text-gray-600">Sorting, searching, recursion, dynamic programming, and algorithm analysis.</p>
+                            </div>
+                            <div class="border-l-4 border-indigo-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Computer Systems</h4>
+                                <p class="text-gray-600">Hardware components, operating systems, networks, and database management.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-indigo-50 p-4 rounded-lg mb-6">
+                            <h4 class="font-semibold text-indigo-900 mb-2">Code Example (Python):</h4>
+                            <pre class="text-indigo-800 text-sm"><code>def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Languages Covered</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Python</li>
+                                <li>• Java</li>
+                                <li>• C++</li>
+                                <li>• JavaScript</li>
+                                <li>• HTML/CSS</li>
+                            </ul>
+                        </div>
+                        <a href="downloads/computer-notes.html" target="_blank" 
+                           class="block w-full bg-indigo-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>Download Notes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- English -->
+            <div id="english" class="subject-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-book-open text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">English</h2>
+                        <p class="text-gray-600">Literature, writing skills, and language mastery</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-red-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Literature Analysis</h4>
+                                <p class="text-gray-600">Poetry, prose, drama analysis, literary devices, themes, and character development.</p>
+                            </div>
+                            <div class="border-l-4 border-red-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Creative Writing</h4>
+                                <p class="text-gray-600">Essay writing, story composition, descriptive writing, and narrative techniques.</p>
+                            </div>
+                            <div class="border-l-4 border-red-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Comprehension Skills</h4>
+                                <p class="text-gray-600">Reading strategies, critical thinking, inference, and analytical skills development.</p>
+                            </div>
+                            <div class="border-l-4 border-red-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Vocabulary Building</h4>
+                                <p class="text-gray-600">Word formation, synonyms, antonyms, idioms, and advanced vocabulary usage.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Key Skills</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Reading comprehension</li>
+                                <li>• Essay writing</li>
+                                <li>• Literary analysis</li>
+                                <li>• Vocabulary enhancement</li>
+                            </ul>
+                        </div>
+                        <a href="downloads/english-notes.html" target="_blank" 
+                           class="block w-full bg-red-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>Download Notes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Urdu -->
+            <div id="urdu" class="subject-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-teal-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-feather-alt text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Urdu</h2>
+                        <p class="text-gray-600">اردو ادب، شاعری اور زبان کی مہارت</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-teal-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">اردو ادب (Urdu Literature)</h4>
+                                <p class="text-gray-600">کلاسیکی اور جدید ادب، مشہور شعراء اور ادباء کی تخلیقات کا مطالعہ</p>
+                            </div>
+                            <div class="border-l-4 border-teal-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">شاعری (Poetry)</h4>
+                                <p class="text-gray-600">غزل، نظم، رباعی، اور مختلف اصناف شاعری کی تفہیم</p>
+                            </div>
+                            <div class="border-l-4 border-teal-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">نثر (Prose)</h4>
+                                <p class="text-gray-600">افسانہ، ناول، مضمون، اور تنقیدی مطالعہ</p>
+                            </div>
+                            <div class="border-l-4 border-teal-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">قواعد (Grammar)</h4>
+                                <p class="text-gray-600">اردو گرامر کے بنیادی اصول، املا، اور زبان کی صحیح استعمال</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">مشہور شعراء</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• علامہ اقبال</li>
+                                <li>• میر تقی میر</li>
+                                <li>• غالب</li>
+                                <li>• فیض احمد فیض</li>
+                            </ul>
+                        </div>
+                        <a href="downloads/urdu-notes.html" target="_blank" 
+                           class="block w-full bg-teal-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>نوٹس ڈاؤن لوڈ کریں
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Islamiat -->
+            <div id="islamiat" class="subject-section bg-white rounded-xl shadow-lg p-8 mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-yellow-500 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-mosque text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold font-poppins text-gray-900">Islamiat</h2>
+                        <p class="text-gray-600">اسلامی تعلیمات اور بنیادی عقائد</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="space-y-4 mb-6">
+                            <div class="border-l-4 border-yellow-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Quran & Hadith</h4>
+                                <p class="text-gray-600">قرآن مجید کی تعلیمات، احادیث مبارکہ، اور ان کی تفسیر</p>
+                            </div>
+                            <div class="border-l-4 border-yellow-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Five Pillars of Islam</h4>
+                                <p class="text-gray-600">ارکان اسلام: شہادت، نماز، زکوٰۃ، روزہ، اور حج کی تفصیلات</p>
+                            </div>
+                            <div class="border-l-4 border-yellow-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Prophet's Life (Seerat)</h4>
+                                <p class="text-gray-600">نبی کریم ﷺ کی سیرت طیبہ، غزوات، اور اسلامی تاریخ</p>
+                            </div>
+                            <div class="border-l-4 border-yellow-500 pl-4">
+                                <h4 class="font-semibold text-gray-900">Islamic Ethics</h4>
+                                <p class="text-gray-600">اسلامی اخلاقیات، معاشرتی تعلیمات، اور عملی زندگی میں اطلاق</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">اہم موضوعات</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• توحید و رسالت</li>
+                                <li>• ارکان اسلام</li>
+                                <li>• سیرت النبی ﷺ</li>
+                                <li>• اسلامی تہذیب</li>
+                            </ul>
+                        </div>
+                        <a href="downloads/islamiat-notes.html" target="_blank" 
+                           class="block w-full bg-yellow-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-yellow-700 transition-colors">
+                            <i class="fas fa-download mr-2"></i>نوٹس ڈاؤن لوڈ کریں
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="assets/logo.svg" alt="EduSphere Logo" class="h-10 w-10 mr-3 filter invert">
+                        <div>
+                            <h3 class="text-xl font-bold font-poppins">EduSphere</h3>
+                            <p class="text-gray-400 text-sm">Your Learning Universe</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        EduSphere is dedicated to providing high-quality educational resources for students.
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Made by <span class="text-blue-400 font-semibold">Gorav Soni</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="subjects.html" class="text-gray-400 hover:text-white transition-colors">Subjects</a></li>
+                        <li><a href="grammar.html" class="text-gray-400 hover:text-white transition-colors">Grammar</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Subjects</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#math" class="text-gray-400 hover:text-white transition-colors">Mathematics</a></li>
+                        <li><a href="#science" class="text-gray-400 hover:text-white transition-colors">Science</a></li>
+                        <li><a href="#physics" class="text-gray-400 hover:text-white transition-colors">Physics</a></li>
+                        <li><a href="#history" class="text-gray-400 hover:text-white transition-colors">History</a></li>
+                        <li><a href="#computer" class="text-gray-400 hover:text-white transition-colors">Computer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 EduSphere. All rights reserved. Made by Gorav Soni.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/three-animations.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
